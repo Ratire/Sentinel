@@ -66,8 +66,8 @@ def fft_block_q1_17_to_q10_17(int_block):   #Converts array of Q1.17 ints to the
 
 def main():
     script_dir = Path(__file__).resolve().parent  # directory containing this .py file
-    input_path = script_dir / "input.md"
-    output_path = script_dir / "output.md"
+    input_path = script_dir / "input.txt"
+    output_path = script_dir / "output.txt"
 
     data_gen = expanded_sectioned_file_reader(input_path)
     current_block = []

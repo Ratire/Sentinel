@@ -4,7 +4,7 @@ import FFT_pkg::*; // Import all definitions
 module Butterfly_FSM#(parameter int N = 1)
     (
     input logic val_in, clk, rst,
-    output logic [35:0] twiddle,
+    output logic [DATA_W-1:0] twiddle,
     output logic bf_on, val_out, val_internal
     );
 	

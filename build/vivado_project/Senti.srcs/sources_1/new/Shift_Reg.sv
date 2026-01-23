@@ -4,7 +4,7 @@ import FFT_pkg::*; // Import all definitions
 module Shift_Reg #(parameter int REG_SIZE)
     (
     input logic [DATA-1:0] delay_in,
-    input logic clk, val_in, rst,
+    input logic clk, val_internal, rst,
     output logic [DATA-1:0] delay_out
     );
     
@@ -17,10 +17,15 @@ module Shift_Reg #(parameter int REG_SIZE)
             reg_array <= '{default: '0};
             delay_out <= '0;
             end
-        else if(val_in)
+        else if(val_internal)
             begin
             delay_out <= reg_array[REG_SIZE-1];
             reg_array <= {reg_array[REG_SIZE-2:0], delay_in};
             end
         end
+endmodule
+
+module tb_Shift_Reg;
+    logic clk, rst;
+
 endmodule

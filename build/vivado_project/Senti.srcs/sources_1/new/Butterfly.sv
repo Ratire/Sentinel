@@ -2,12 +2,10 @@
 import FFT_pkg::*; // Import all definitions
 
 module Butterfly(
-    input logic [DATA-1:0] data_in,
-    input logic [DATA-1:0] delay_out,
+    input logic [DATA-1:0] data_in, delay_out,
     input logic [DATA_W-1:0] twiddle,
     input logic bf_on,
-    output logic [DATA-1:0] data_out,
-    output logic [DATA-1:0] delay_in
+    output logic [DATA-1:0] data_out, delay_in
     );
     
     always_comb 

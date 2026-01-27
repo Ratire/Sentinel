@@ -19,7 +19,7 @@ module SDF_mod #(parameter int S = 1, POINTS = 512) //S represents the stage thi
     
     Butterfly_FSM #(.MTI(DELAY_BUFFER_SIZE), .STRIDE(STRIDE)) bf_fsm (.val_in(val_in), .clk(clk), .rst(rst), .twiddle(twiddle), .bf_on(bf_on), .val_out(val_out), .val_internal(val_internal));
     Shift_Reg #(.REG_SIZE(DELAY_BUFFER_SIZE)) shift_reg (.delay_in(delay_in_int), .clk(clk), .val_internal(val_internal), .rst(rst), .delay_out(delay_out));
-    Butterfly (.data_in(data_in), .delay_out(delay_out), .twiddle(twiddle), .bf_on(bf_on), .data_out(data_out), .delay_in(delay_in_int));
+    Butterfly bf (.data_in(data_in), .delay_out(delay_out), .twiddle(twiddle), .bf_on(bf_on), .data_out(data_out), .delay_in(delay_in_int));
     
     /*
     always_ff @(posedge clk or posedge rst)

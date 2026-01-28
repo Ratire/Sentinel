@@ -103,3 +103,27 @@
 */*/*/bd/*/ip/*/*.tcl
 hw_handoff
 ipshared
+
+#------------------------
+# User Additions (by me)
+#------------------------
+
+# Simulation directories and files
+*.sim/
+xsim.dir/
+
+# Waveform database files
+*.wdb
+*.wcfg
+
+# XSim tool artifacts
+xsim.*
+xvlog.*
+xelab.*
+
+# User-specific project settings
+*.xpr.user
+
+# Simulation dumps
+*.vcd
+*.saif

@@ -13,19 +13,12 @@ module SDF_mod #(parameter int S = 1, POINTS = 512) //S represents the stage thi
     localparam STRIDE = 2**(S-1);
     
     //Connecting signals between modules
-    logic val_internal, bf_on;
+    logic bf_on;
     logic [DATA_W-1:0] twiddle;
     logic [DATA-1:0] data_out_int, delay_in_int, delay_out;
     
-    Butterfly_FSM #(.MTI(DELAY_BUFFER_SIZE), .STRIDE(STRIDE)) bf_fsm (.val_in(val_in), .clk(clk), .rst(rst), .twiddle(twiddle), .bf_on(bf_on), .val_out(val_out), .val_internal(val_internal));
-    Shift_Reg #(.REG_SIZE(DELAY_BUFFER_SIZE)) shift_reg (.delay_in(delay_in_int), .clk(clk), .val_internal(val_internal), .rst(rst), .delay_out(delay_out));
+    Butterfly_FSM #(.MTI(DELAY_BUFFER_SIZE), .STRIDE(STRIDE)) bf_fsm (.val_in(val_in), .clk(clk), .rst(rst), .twiddle(twiddle), .bf_on(bf_on), .val_out(val_out));
+    Shift_Reg #(.REG_SIZE(DELAY_BUFFER_SIZE)) shift_reg (.delay_in(delay_in_int), .clk(clk), .val_internal(val_in), .rst(rst), .delay_out(delay_out));
     Butterfly bf (.data_in(data_in), .delay_out(delay_out), .twiddle(twiddle), .bf_on(bf_on), .data_out(data_out), .delay_in(delay_in_int));
-    
-    /*
-    always_ff @(posedge clk or posedge rst)
-    begin
-        data_out <= (rst == 1'b1 ? '0 : data_out_int);
-    end
-    */
     
 endmodule

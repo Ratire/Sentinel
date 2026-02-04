@@ -4,7 +4,7 @@ import FFT_pkg::*; // Import all definitions
 module Shift_Reg #(parameter int REG_SIZE)
     (
     input logic [DATA-1:0] delay_in,
-    input logic clk, val_internal, rst,
+    input logic clk, rst,
     output logic [DATA-1:0] delay_out
     );
     
@@ -17,7 +17,7 @@ module Shift_Reg #(parameter int REG_SIZE)
             reg_array <= '{default: '0};
             delay_out <= '0;
             end
-        else if(val_internal)
+        else
             begin
             delay_out <= reg_array[REG_SIZE-1];
             reg_array <= {reg_array[REG_SIZE-2:0], delay_in};
@@ -45,9 +45,8 @@ module tb_Shift_Reg;
     initial
     begin
         @(negedge clk);
+        rst = 1;
         
-        @(negedge clk);
-        val_internal = 1;
         @(negedge clk);
         rst = 0;
         for(int i = 0; i < REG_SIZE_TB + 2; ++i)
@@ -55,12 +54,10 @@ module tb_Shift_Reg;
             @(negedge clk);
         end
         
-        val_internal = 0;
-        
         @(negedge clk);
         rst = 1;
         
-        
+       #20;
         $finish;
     end
 endmodule

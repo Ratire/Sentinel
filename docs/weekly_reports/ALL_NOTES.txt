@@ -1,0 +1,10 @@
+Where we are for The Sentinel, Part 1/22/2026
+- Need to create python script for calculating twiddles and finish incorporating them for the ROM of the rtl FFT code.
+
+
+Where we are for The Sentinel, Part 2/04/2026
+- Need to figure out what to do with val_out. I believe every SDF module within this SDF line needs to be turned on at some point, specifically on module needs to turn on the next after the first traversal from SHIFT to FLOW state. I bet I can implement this by just extending the FSM by 1 more state called "SHIFT AGAIN" or something, lmao.
+
+- After that, just need to connect the rst to the val_in within the SDF module (so that it turns off once val_in is turned on by the previous module), and test all of these changes between multiple SDF modules. Then it should be good.
+
+- Then, I need to create the bit reverser module, and just finish this FFT module, and finally move on to the systolic array (I have until March 18 until NSBE conference).

@@ -38,14 +38,13 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
         else
             begin
             current_state <= next_state;
+            {bf_on, val_out} <= out_vals;
             end
             
-        if (current_state inside {SHIFT, FLOW} || (current_state == IDLE && inp_vals == 3'b100))
+        if (current_state inside {SHIFT, FLOW,  SHIFT_AGAIN} || (current_state == IDLE && inp_vals == 3'b100))
             begin
             n <= (n+1) % MTI;
             end
-            
-        {bf_on, val_out} <= out_vals;
     end
 
 
@@ -70,6 +69,7 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
                 else if (inp_vals == 3'b110)                // val_in=1, n_max=1, rst=0
                     next_state = FLOW;
             end
+            
             FLOW:
             begin
                 priority if (!inp_vals[VI] || inp_vals[RS])          // !val_in || rst
@@ -77,7 +77,17 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
                 else if (inp_vals == 3'b100)                // val_in=1, n_max=0, rst=0
                     next_state = FLOW;
                 else if (inp_vals == 3'b110)                // val_in=1, n_max=1, rst=0
-                    next_state = SHIFT;
+                    next_state = SHIFT_AGAIN;
+            end
+            
+            SHIFT_AGAIN:
+            begin
+                priority if (!inp_vals[VI] || inp_vals[RS])          // !val_in || rst
+                    next_state = IDLE;
+                else if (inp_vals == 3'b100)                // val_in=1, n_max=0, rst=0
+                    next_state = SHIFT_AGAIN;
+                else if (inp_vals == 3'b110)                // val_in=1, n_max=1, rst=0
+                    next_state = FLOW;
             end
         endcase
     end
@@ -100,7 +110,12 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
             
             FLOW:
             begin
-               out_vals = (!inp_vals[VI] || inp_vals[RS]) ? 2'b00 : (inp_vals == 3'b110) ? 2'b00 : 2'b11;
+               out_vals = (!inp_vals[VI] || inp_vals[RS]) ? 2'b00 : (inp_vals == 3'b110) ? 2'b01 : 2'b11;
+            end
+            
+            SHIFT_AGAIN:
+            begin
+                out_vals = (!inp_vals[VI] || inp_vals[RS]) ? 2'b00 : (inp_vals == 3'b110) ? 2'b11 : 2'b01;
             end
         endcase
     end

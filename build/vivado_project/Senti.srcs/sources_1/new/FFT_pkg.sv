@@ -6,7 +6,7 @@ package FFT_pkg;
     localparam int DATA = 2*(DATA_I + DATA_F); //must be an even number for both
     localparam int DATA_W = 2*(DATA_W_I + DATA_W_F);
     
-    typedef enum logic [1:0] {IDLE, SHIFT, FLOW} state_t; //FSM states of butterfly FSM module
+    typedef enum logic [1:0] {IDLE, SHIFT, FLOW, SHIFT_AGAIN} state_t; //FSM states of butterfly FSM module
     
     typedef struct packed {
         logic signed [DATA/2-1:0] r_val, c_val; //real and complex values

@@ -64,14 +64,7 @@ def fft_block_q1_17_to_q10_17(int_block):   #Converts array of Q1.17 ints to the
     return fft_res, fft_res_rr, fft_res_ir
 
 
-def main():
-    script_dir = Path(__file__).resolve().parent  # directory containing this .py file
-    input_path = script_dir / "input.txt"
-    output_path = script_dir / "output.txt"
-
-    data_gen = expanded_sectioned_file_reader(input_path)
-    current_block = []
-
+def generating_data_file(input_path, output_path, data_gen, current_block):
     with open(output_path, 'w') as out:
         inp_i = 0
         out_i = 0
@@ -114,6 +107,68 @@ def main():
                             )
                         
                         current_block = [] # Clear for next section
+
+def bit_reverse(i, n_bits):
+    mask = (1 << n_bits+1) - 1
+    i &= mask
+
+
+    i_str = str(i)
+    i_str = i_str[::-1]
+
+    return int(i_str, 2)
+
+def generating_data_file_for_sv(input_path, output_path, data_gen, current_block):
+    with open(output_path, 'w') as out:
+        inp_i = 0
+        out_i = 0
+
+        for tag, val in data_gen:
+            match tag:
+                case "SECTION_START":
+                    inp_i = 0
+                    out_i = 0
+
+                case "DATA":
+                    inp_i += 1
+                    out.write(f"{val:022_b}\n")
+                    current_block.append(val)
+
+                case "SECTION_END":
+                    out.write(f"*OUTPUTS:*\n")
+
+                    if len(current_block) != 512:
+                        raise ValueError(f"Expected 512 samples per section, got {len(current_block)}")
+                    
+                    if current_block:
+                        fft_res, fft_res_rr, fft_res_ir = fft_block_q1_17_to_q10_17(current_block)
+
+                        N = 27
+                        mask = (1 << N) - 1
+
+                        for i in range(len(fft_res)):
+                            f_res = fft_res[i]
+                            re_int = fft_res_rr[i] & mask  #Keep low 27 bits
+                            im_int = fft_res_ir[i] & mask  #Keep low 27 bits
+
+                            out_i += 1
+                            out.write(
+                                f"{re_int:033_b} {im_int:033_b}\n"
+                            )
+                        
+                        current_block = [] # Clear for next section
+
+
+def main():
+    script_dir = Path(__file__).resolve().parent  # directory containing this .py file
+    input_path = script_dir / "input.txt"
+    input_path_sv = script_dir / "output_sv.txt"
+
+    output_path = script_dir / "output.txt"
+    output_path_sv = script_dir / "output_sv.txt"
+
+    data_gen = expanded_sectioned_file_reader(input_path)
+    current_block = []
 
 
 if __name__ == "__main__":

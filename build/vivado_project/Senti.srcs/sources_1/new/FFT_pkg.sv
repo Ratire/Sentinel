@@ -3,8 +3,10 @@ package FFT_pkg;
     localparam int DATA_I = 12, DATA_F = 15; //12 integer bits and 15 fractional bits (MSB integer bit is the sign bit as well)
     localparam int DATA_W_I = 1, DATA_W_F = 17; //same format
     
-    localparam int DATA = 2*(DATA_I + DATA_F); //must be an even number for both
+    localparam DATA = 2*(DATA_I + DATA_F); //must be an even number for both
     localparam int DATA_W = 2*(DATA_W_I + DATA_W_F);
+    
+    localparam DATA_INP = 18; //inputted data width
     
     typedef enum logic [1:0] {IDLE, SHIFT, FLOW, SHIFT_AGAIN} state_t; //FSM states of butterfly FSM module
     

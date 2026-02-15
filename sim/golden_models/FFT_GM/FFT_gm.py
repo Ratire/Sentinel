@@ -64,7 +64,10 @@ def fft_block_q1_17_to_q10_17(int_block):   #Converts array of Q1.17 ints to the
     return fft_res, fft_res_rr, fft_res_ir
 
 
-def generating_data_file(input_path, output_path, data_gen, current_block):
+def generating_data_file(input_path, output_path):
+    data_gen = expanded_sectioned_file_reader(input_path)
+    current_block = []
+
     with open(output_path, 'w') as out:
         inp_i = 0
         out_i = 0
@@ -109,33 +112,27 @@ def generating_data_file(input_path, output_path, data_gen, current_block):
                         current_block = [] # Clear for next section
 
 def bit_reverse(i, n_bits):
-    mask = (1 << n_bits+1) - 1
-    i &= mask
+    binary_str = format(i, f'0{n_bits}b')
+    return int(binary_str[::-1], 2)  
 
+def generating_output_data_file_for_sv(input_path, output_path):
+    data_gen = expanded_sectioned_file_reader(input_path)
+    current_block = []
+    section_idx = 0
 
-    i_str = str(i)
-    i_str = i_str[::-1]
-
-    return int(i_str, 2)
-
-def generating_data_file_for_sv(input_path, output_path, data_gen, current_block):
     with open(output_path, 'w') as out:
-        inp_i = 0
-        out_i = 0
 
         for tag, val in data_gen:
             match tag:
                 case "SECTION_START":
-                    inp_i = 0
-                    out_i = 0
+                    current_block = []     # reset per section
+                    section_idx += 1
 
                 case "DATA":
-                    inp_i += 1
-                    out.write(f"{val:022_b}\n")
                     current_block.append(val)
 
                 case "SECTION_END":
-                    out.write(f"*OUTPUTS:*\n")
+                    out.write(f"// OUTPUTS: {section_idx}\n")
 
                     if len(current_block) != 512:
                         raise ValueError(f"Expected 512 samples per section, got {len(current_block)}")
@@ -143,33 +140,45 @@ def generating_data_file_for_sv(input_path, output_path, data_gen, current_block
                     if current_block:
                         fft_res, fft_res_rr, fft_res_ir = fft_block_q1_17_to_q10_17(current_block)
 
-                        N = 27
-                        mask = (1 << N) - 1
+                        N = len(fft_res_rr)
+                        rev_idxs = [bit_reverse(i, 9) for i in range(N)]
 
-                        for i in range(len(fft_res)):
-                            f_res = fft_res[i]
-                            re_int = fft_res_rr[i] & mask  #Keep low 27 bits
-                            im_int = fft_res_ir[i] & mask  #Keep low 27 bits
+                        fft_res_rr_sdf = fft_res_rr[rev_idxs]
+                        fft_res_ir_sdf = fft_res_ir[rev_idxs]
 
-                            out_i += 1
-                            out.write(
-                                f"{re_int:033_b} {im_int:033_b}\n"
-                            )
-                        
-                        current_block = [] # Clear for next section
+                        mask = (1 << 27) - 1
 
+                        for k in range(N):
+                            re_int = fft_res_rr_sdf[k] & mask
+                            im_int = fft_res_ir_sdf[k] & mask
+                            out.write(f"{re_int:033_b} {im_int:033_b}\n")
+
+                        out.write("\n")
+
+def generating_input_data_file_for_sv(input_path, output_path):
+    data_gen = expanded_sectioned_file_reader(input_path)
+    section_idx = 0
+    with open(output_path, "w") as out_file:
+        for tag, val in data_gen:
+            if tag == "SECTION_START":
+                section_idx += 1
+                out_file.write(f"// INPUTS {section_idx}\n")
+            elif tag == "DATA":
+                out_file.write(f"{val:018_b}\n")  # or whatever width matches your RTL
+            elif tag == "SECTION_END":
+                    out_file.write("\n")
 
 def main():
     script_dir = Path(__file__).resolve().parent  # directory containing this .py file
-    input_path = script_dir / "input.txt"
-    input_path_sv = script_dir / "output_sv.txt"
+    input_path      = script_dir / "input.txt"
+    sv_input_path   = script_dir / "fft_input_sv.mem"
+    sv_output_path  = script_dir / "fft_output_sv.mem"
+    debug_path      = script_dir / "fft_debug.txt"
 
-    output_path = script_dir / "output.txt"
-    output_path_sv = script_dir / "output_sv.txt"
-
-    data_gen = expanded_sectioned_file_reader(input_path)
-    current_block = []
-
+    generating_input_data_file_for_sv(input_path, sv_input_path) # Creates the test vector input values for Vivado
+    generating_output_data_file_for_sv(input_path, sv_output_path) # Creates the test vector output values for Vivado
+    
+    generating_data_file(input_path, debug_path) # Creates the human readable test vector inputs and results
 
 if __name__ == "__main__":
     main()

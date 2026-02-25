@@ -21,16 +21,19 @@ package FFT_pkg;
     localparam SDF_EXTENDED_SIZE = DATA/2 + DATA_W/2 + 2;
     
     function automatic logic signed [DATA/2-1:0] saturate_mul (input logic signed [SDF_EXTENDED_SIZE-1:0] data);
-        logic signed[DATA/2 + 2:0] q15_15 = data[$left(data) -: DATA/2 + 3];
-        logic signed [DATA/2-1:0] q12_15 = q15_15[$left(q15_15)-3 -: DATA/2];
-        
-        //Saturate in the Q12.15 domain
         localparam logic signed [DATA/2-1:0] MAX = (2**(DATA/2-1))-1;
         localparam logic signed [DATA/2-1:0] MIN = -(2**(DATA/2-1));
         
-        if (q12_15 > MAX)       return MAX;
-        else if (q12_15 < MIN)  return MIN;
-        else                    return q12_15;
+        automatic logic signed [SDF_EXTENDED_SIZE-1:0] tmp;
+        automatic logic signed [(SDF_EXTENDED_SIZE-1) : 0] data_shifted;
+        
+        tmp = (data >= 0) ? (data + (1 <<< (DATA_W_F-1))) : (data - (1 <<< (DATA_W_F-1)));
+        data_shifted = tmp >>> DATA_W_F; //get rid of twiddle extra fractional bits        
+        
+        //Saturate in the Q12.15 domain
+        if (data_shifted > MAX)       return MAX;
+        else if (data_shifted < MIN)  return MIN;
+        else                          return data_shifted[DATA/2-1:0];
     endfunction
     
     function automatic logic signed [DATA/2-1:0] saturate_add_27 (input logic signed [DATA/2:0] data);

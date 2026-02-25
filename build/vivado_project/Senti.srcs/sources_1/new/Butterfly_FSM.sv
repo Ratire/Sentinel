@@ -15,7 +15,9 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
     logic n_max;    //logic value set to high when n reaches its max value.
     assign n_max = (n+1 == MTI ? 1 : 0);
     
-    logic [2:0] inp_vals, out_vals;
+    logic [2:0] inp_vals; 
+    logic [1:0] out_vals;
+    
     assign inp_vals = {val_in, n_max, rst}; //simplified input_vals
     localparam VI = 2, NM = 1, RS = 0;
     
@@ -54,39 +56,43 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
         case (current_state)
             IDLE:
             begin
-                priority if (!inp_vals[VI] || inp_vals[RS])          // !val_in || rst
+                if (!inp_vals[VI] || inp_vals[RS])                      // !val_in || rst
                     next_state = IDLE;
-                else if (inp_vals == 3'b100)                // val_in=1, n_max=0, rst=0
+                else if ((inp_vals[VI] & !inp_vals[RS]) && (MTI == 1))  // val_in=1, rst=0, S = 9th stage
+                    next_state = FLOW;
+                else if (inp_vals == 3'b100)                            // val_in=1, n_max=0, rst=0
                     next_state = SHIFT;
             end
             
             SHIFT:
             begin
-                priority if (!inp_vals[VI] || inp_vals[RS])          // !val_in || rst
+                if (!inp_vals[VI] || inp_vals[RS])                      // !val_in || rst
                     next_state = IDLE;
-                else if (inp_vals == 3'b100)                // val_in=1, n_max=0, rst=0
+                else if (inp_vals == 3'b100)                            // val_in=1, n_max=0, rst=0
                     next_state = SHIFT;
-                else if (inp_vals == 3'b110)                // val_in=1, n_max=1, rst=0
+                else if (inp_vals == 3'b110)                            // val_in=1, n_max=1, rst=0
                     next_state = FLOW;
             end
             
             FLOW:
             begin
-                priority if (!inp_vals[VI] || inp_vals[RS])          // !val_in || rst
+                if (!inp_vals[VI] || inp_vals[RS])                      // !val_in || rst
                     next_state = IDLE;
-                else if (inp_vals == 3'b100)                // val_in=1, n_max=0, rst=0
+                else if ((inp_vals[VI] & !inp_vals[RS]) && (MTI == 1))  // val_in=1, rst=0, S = 9th stage
                     next_state = FLOW;
-                else if (inp_vals == 3'b110)                // val_in=1, n_max=1, rst=0
+                else if (inp_vals == 3'b100)                            // val_in=1, n_max=0, rst=0
+                    next_state = FLOW;
+                else if (inp_vals == 3'b110)                            // val_in=1, n_max=1, rst=0
                     next_state = SHIFT_AGAIN;
             end
             
             SHIFT_AGAIN:
             begin
-                priority if (!inp_vals[VI] || inp_vals[RS])          // !val_in || rst
+                if (!inp_vals[VI] || inp_vals[RS])                      // !val_in || rst
                     next_state = IDLE;
-                else if (inp_vals == 3'b100)                // val_in=1, n_max=0, rst=0
+                else if (inp_vals == 3'b100)                            // val_in=1, n_max=0, rst=0
                     next_state = SHIFT_AGAIN;
-                else if (inp_vals == 3'b110)                // val_in=1, n_max=1, rst=0
+                else if (inp_vals == 3'b110)                            // val_in=1, n_max=1, rst=0
                     next_state = FLOW;
             end
         endcase
@@ -95,7 +101,7 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
 
     always_comb                             //choose outputs based on both current state and inputs
     begin
-        out_vals = 3'b00;
+        out_vals = 2'b00;
         
         case (current_state)
             IDLE:
@@ -110,7 +116,7 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
             
             FLOW:
             begin
-               out_vals = (!inp_vals[VI] || inp_vals[RS]) ? 2'b00 : (inp_vals == 3'b110) ? 2'b01 : 2'b11;
+               out_vals = (!inp_vals[VI] || inp_vals[RS]) ? 2'b00 : (inp_vals == 3'b110 && MTI == 1) ? 2'b11 : (inp_vals == 3'b110) ? 2'b01 : 2'b11;
             end
             
             SHIFT_AGAIN:
@@ -123,7 +129,8 @@ endmodule
 
 module tb_Butterfly_FSM;
     //parameters of DUT
-    localparam int MTI = 4, STRIDE = 1;
+    //localparam int MTI = 4, STRIDE = 1;
+    localparam int MTI = 1, STRIDE = 256;
     
     //inputs
     logic val_in = 0, clk = 0, rst = 0;

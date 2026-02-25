@@ -49,8 +49,10 @@ def fft_block_q1_17_to_q10_17(int_block):   #Converts array of Q1.17 ints to the
     
     raw_ints = np.where(raw_ints & sign_bit, raw_ints - total_range, raw_ints)  #Makes sure every element is signed
     float_data = raw_ints / (2**17) #Converts values to floating point
-
     fft_res = np.fft.fft(float_data)    #Does the 512-point FFT operation
+
+    SCALE = 2**3           # one 1-bit shift per stage (in which this 512-point FFT has 9 stages, we'll only do it for 3 of the stages = 2**3)
+    fft_res = fft_res / SCALE
 
     scaled_fft = fft_res * (2**17)  #Returns the result closer to int format
     fft_res_rr = np.round(scaled_fft.real).astype(np.int32) #FFT result real rounded int

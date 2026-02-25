@@ -13,25 +13,25 @@ module Shift_Reg #(parameter int REG_SIZE)
     assign delay_out = reg_array[REG_SIZE-1];
     
     always_ff @(posedge clk or posedge rst)
-        begin
-        priority if (rst)
-            begin
+    begin
+        if (rst) begin
             reg_array <= '{default: '0};
-            end
-        else if (val_in)
-            begin
-            reg_array <= {reg_array[REG_SIZE-2:0], delay_in};
+        end
+        else if (val_in) begin
+            reg_array[0] <= delay_in;
+            for (int k = 1; k < REG_SIZE; k++) begin
+                reg_array[k] <= reg_array[k-1];
             end
         end
+    end
 endmodule
-
 
 
 module tb_Shift_Reg;
     logic clk = 0, rst = 1, val_in = 0;
     logic [DATA-1:0] delay_in_var = '0, delay_out_var;
     
-    localparam int REG_SIZE_TB = 5;
+    localparam int REG_SIZE_TB = 1;
     
     Shift_Reg #(.REG_SIZE(REG_SIZE_TB)) dut (.clk(clk), .val_in(val_in), .rst(rst), .delay_in(delay_in_var), .delay_out(delay_out_var));
     
@@ -49,6 +49,8 @@ module tb_Shift_Reg;
         
         @(negedge clk);
         rst = 0;
+        val_in = 1;
+        
         for(int i = 0; i < REG_SIZE_TB + 2; ++i)
         begin
             @(negedge clk);

@@ -12,13 +12,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="44,862.567 ns"></ZoomStartTime>
-      <ZoomEndTime time="46,053.487 ns"></ZoomEndTime>
-      <Cursor1Time time="45,855.000 ns"></Cursor1Time>
+      <ZoomStartTime time="909.750 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,018.051 ns"></ZoomEndTime>
+      <Cursor1Time time="953.150 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="153"></NameColumnWidth>
-      <ValueColumnWidth column_width="92"></ValueColumnWidth>
+      <NameColumnWidth column_width="213"></NameColumnWidth>
+      <ValueColumnWidth column_width="123"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="9" />
    <wvobject type="group" fp_name="group66">
@@ -68,6 +68,15 @@
          <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/n_max">
             <obj_property name="ElementShortName">n_max</obj_property>
             <obj_property name="ObjectShortName">n_max</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/inp_vals">
             <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
@@ -199,6 +208,15 @@
             <obj_property name="ElementShortName">n_max</obj_property>
             <obj_property name="ObjectShortName">n_max</obj_property>
          </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/inp_vals">
             <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
             <obj_property name="ObjectShortName">inp_vals[2:0]</obj_property>
@@ -328,6 +346,15 @@
          <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/n_max">
             <obj_property name="ElementShortName">n_max</obj_property>
             <obj_property name="ObjectShortName">n_max</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/inp_vals">
             <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
@@ -459,6 +486,15 @@
             <obj_property name="ElementShortName">n_max</obj_property>
             <obj_property name="ObjectShortName">n_max</obj_property>
          </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/inp_vals">
             <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
             <obj_property name="ObjectShortName">inp_vals[2:0]</obj_property>
@@ -588,6 +624,15 @@
          <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/n_max">
             <obj_property name="ElementShortName">n_max</obj_property>
             <obj_property name="ObjectShortName">n_max</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/inp_vals">
             <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
@@ -719,6 +764,15 @@
             <obj_property name="ElementShortName">n_max</obj_property>
             <obj_property name="ObjectShortName">n_max</obj_property>
          </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/inp_vals">
             <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
             <obj_property name="ObjectShortName">inp_vals[2:0]</obj_property>
@@ -848,6 +902,15 @@
          <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/n_max">
             <obj_property name="ElementShortName">n_max</obj_property>
             <obj_property name="ObjectShortName">n_max</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/inp_vals">
             <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
@@ -979,6 +1042,15 @@
             <obj_property name="ElementShortName">n_max</obj_property>
             <obj_property name="ObjectShortName">n_max</obj_property>
          </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/inp_vals">
             <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
             <obj_property name="ObjectShortName">inp_vals[2:0]</obj_property>
@@ -1108,6 +1180,15 @@
          <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/n_max">
             <obj_property name="ElementShortName">n_max</obj_property>
             <obj_property name="ObjectShortName">n_max</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/inp_vals">
             <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>

@@ -74,7 +74,7 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
             
             SHIFT:
             begin
-                if (inp_vals[RS] || (frame_done && !inp_vals[VI]))                                       // rst
+                if (inp_vals[RS] || (frame_done && !inp_vals[VI]))      // rst
                     next_state = IDLE;
                 else if (inp_vals[NM])                                  // n_max=1, rst=0
                     next_state = FLOW;
@@ -86,22 +86,22 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
             begin
                 if (inp_vals[RS] || (frame_done && !inp_vals[VI]))      // rst
                     next_state = IDLE;
-                else if (MTI == 1)  // val_in=1, rst=0, S = 9th stage
+                else if (MTI == 1)                                      // rst=0, S = 9th stage
                     next_state = FLOW;
-                else if (inp_vals == 3'b100)                            // val_in=1, n_max=0, rst=0
-                    next_state = FLOW;
-                else if (inp_vals == 3'b110)                            // val_in=1, n_max=1, rst=0
+                else if (inp_vals[NM])                                  // n_max=1
                     next_state = SHIFT_AGAIN;
+                else                                                    // default case
+                    next_state = FLOW;
             end
             
             SHIFT_AGAIN:
             begin
-                if (inp_vals[RS] || (frame_done && !inp_vals[VI]))      // !val_in || rst
+                if (inp_vals[RS] || (frame_done && !inp_vals[VI]))      // rst
                     next_state = IDLE;
-                else if (inp_vals == 3'b100)                            // val_in=1, n_max=0, rst=0
-                    next_state = SHIFT_AGAIN;
-                else if (inp_vals == 3'b110)                            // val_in=1, n_max=1, rst=0
+                else if (inp_vals[NM])                                  // n_max=1, rst=0
                     next_state = FLOW;
+                else                                                    // default case
+                    next_state = SHIFT_AGAIN;
             end
         endcase
     end
@@ -119,17 +119,17 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
             
             SHIFT:
             begin
-                out_vals = (!inp_vals[VI] || inp_vals[RS]) ? 2'b00 : (inp_vals == 3'b110) ? 2'b11 : 2'b00;
+                out_vals = (inp_vals[RS] || (frame_done && !inp_vals[VI])) ? 2'b00 : (inp_vals[NM]) ? 2'b11 : 2'b00;
             end
             
             FLOW:
             begin
-               out_vals = (!inp_vals[VI] || inp_vals[RS]) ? 2'b00 : (inp_vals == 3'b110 && MTI == 1) ? 2'b11 : (inp_vals == 3'b110) ? 2'b01 : 2'b11;
+               out_vals = (inp_vals[RS] || (frame_done && !inp_vals[VI])) ? 2'b00 : (MTI == 1) ? 2'b11 : (inp_vals[NM]) ? 2'b01 : 2'b11;
             end
             
             SHIFT_AGAIN:
             begin
-                out_vals = (!inp_vals[VI] || inp_vals[RS]) ? 2'b00 : (inp_vals == 3'b110) ? 2'b11 : 2'b01;
+                out_vals = (inp_vals[RS] || (frame_done && !inp_vals[VI])) ? 2'b00 : (inp_vals[NM]) ? 2'b11 : 2'b01;
             end
         endcase
     end

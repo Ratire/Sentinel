@@ -114,7 +114,6 @@ xsim.dir/
 
 # Waveform database files
 *.wdb
-*.wcfg
 
 # XSim tool artifacts
 xsim.*

@@ -193,7 +193,7 @@ module tb_FFT512;
                 
                 else 
                 begin
-                    //val_in <= 0;
+                    val_in <= 0;
                 end
                 
                 exp_re = data_out_arr[out_idx][0];

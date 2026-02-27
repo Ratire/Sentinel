@@ -15,6 +15,12 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
     logic n_max;    //logic value set to high when n reaches its max value.
     assign n_max = (n+1 == MTI ? 1 : 0);
     
+    localparam POINTS = 512;
+    localparam COUNTER_BITS = $clog2(POINTS);
+    logic [COUNTER_BITS-1:0] counter = 0; //used to check if the frame is done
+    logic frame_done;
+    assign frame_done = counter == (POINTS-1);
+    
     logic [2:0] inp_vals; 
     logic [1:0] out_vals;
     
@@ -23,7 +29,7 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
     
     //out_vals = {bf_on, val_out}
     localparam BF = 2, VINT = 1, VO = 0;
-   
+    
     logic [35:0] twiddle_rom [0:255];
     initial $readmemh("twiddle_unified.mem", twiddle_rom);
     
@@ -36,6 +42,7 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
             current_state <= IDLE;
             n <= 0;
             {bf_on, val_out} <= 3'b00;
+            counter <= 0;
             end
         else
             begin
@@ -46,6 +53,7 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
         if (current_state inside {SHIFT, FLOW,  SHIFT_AGAIN} || (current_state == IDLE && inp_vals == 3'b100))
             begin
             n <= (n+1) % MTI;
+            counter <= (counter+1) % POINTS;
             end
     end
 
@@ -58,27 +66,27 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
             begin
                 if (!inp_vals[VI] || inp_vals[RS])                      // !val_in || rst
                     next_state = IDLE;
-                else if ((inp_vals[VI] & !inp_vals[RS]) && (MTI == 1))  // val_in=1, rst=0, S = 9th stage
+                else if (inp_vals[VI] && MTI == 1)                      // val_in=1, rst=0, S = 9th stage
                     next_state = FLOW;
-                else if (inp_vals == 3'b100)                            // val_in=1, n_max=0, rst=0
+                else if (inp_vals[VI])                                  // val_in=1
                     next_state = SHIFT;
             end
             
             SHIFT:
             begin
-                if (!inp_vals[VI] || inp_vals[RS])                      // !val_in || rst
+                if (inp_vals[RS] || (frame_done && !inp_vals[VI]))                                       // rst
                     next_state = IDLE;
-                else if (inp_vals == 3'b100)                            // val_in=1, n_max=0, rst=0
-                    next_state = SHIFT;
-                else if (inp_vals == 3'b110)                            // val_in=1, n_max=1, rst=0
+                else if (inp_vals[NM])                                  // n_max=1, rst=0
                     next_state = FLOW;
+                else                                                    // default case
+                    next_state = SHIFT;
             end
             
             FLOW:
             begin
-                if (!inp_vals[VI] || inp_vals[RS])                      // !val_in || rst
+                if (inp_vals[RS] || (frame_done && !inp_vals[VI]))      // rst
                     next_state = IDLE;
-                else if ((inp_vals[VI] & !inp_vals[RS]) && (MTI == 1))  // val_in=1, rst=0, S = 9th stage
+                else if (MTI == 1)  // val_in=1, rst=0, S = 9th stage
                     next_state = FLOW;
                 else if (inp_vals == 3'b100)                            // val_in=1, n_max=0, rst=0
                     next_state = FLOW;
@@ -88,7 +96,7 @@ module Butterfly_FSM#(parameter int MTI, STRIDE) //MTI stands for MAX_TWIDDLE_IN
             
             SHIFT_AGAIN:
             begin
-                if (!inp_vals[VI] || inp_vals[RS])                      // !val_in || rst
+                if (inp_vals[RS] || (frame_done && !inp_vals[VI]))      // !val_in || rst
                     next_state = IDLE;
                 else if (inp_vals == 3'b100)                            // val_in=1, n_max=0, rst=0
                     next_state = SHIFT_AGAIN;

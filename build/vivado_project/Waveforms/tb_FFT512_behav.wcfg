@@ -12,15 +12,24 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="909.750 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,018.051 ns"></ZoomEndTime>
-      <Cursor1Time time="953.150 ns"></Cursor1Time>
+      <ZoomStartTime time="49,661.666 ns"></ZoomStartTime>
+      <ZoomEndTime time="51,249.667 ns"></ZoomEndTime>
+      <Cursor1Time time="50,985.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="213"></NameColumnWidth>
-      <ValueColumnWidth column_width="123"></ValueColumnWidth>
+      <ValueColumnWidth column_width="107"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="9" />
+   <wave_markers>
+      <marker label="" time="2585000" />
+      <marker label="" time="3855000" />
+      <marker label="" time="35000" />
+      <marker label="" time="2575000" />
+      <marker label="" time="5125000" />
+      <marker label="" time="10285000" />
+      <marker label="" time="11555000" />
+   </wave_markers>
    <wvobject type="group" fp_name="group66">
       <obj_property name="label">sdf1</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -64,6 +73,7 @@
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/n">
             <obj_property name="ElementShortName">n[8:0]</obj_property>
             <obj_property name="ObjectShortName">n[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/n_max">
             <obj_property name="ElementShortName">n_max</obj_property>
@@ -94,6 +104,7 @@
       <wvobject type="group" fp_name="group68">
          <obj_property name="label">reg</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/shift_reg/delay_in">
             <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
@@ -126,6 +137,7 @@
       <wvobject type="group" fp_name="group69">
          <obj_property name="label">bf</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf/data_in">
             <obj_property name="ElementShortName">data_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
@@ -203,6 +215,7 @@
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/n">
             <obj_property name="ElementShortName">n[7:0]</obj_property>
             <obj_property name="ObjectShortName">n[7:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          </wvobject>
          <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/n_max">
             <obj_property name="ElementShortName">n_max</obj_property>
@@ -233,6 +246,7 @@
       <wvobject type="group" fp_name="group68">
          <obj_property name="label">reg</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/shift_reg/delay_in">
             <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
@@ -265,6 +279,7 @@
       <wvobject type="group" fp_name="group69">
          <obj_property name="label">bf</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf/data_in">
             <obj_property name="ElementShortName">data_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
@@ -372,6 +387,7 @@
       <wvobject type="group" fp_name="group68">
          <obj_property name="label">reg</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/shift_reg/delay_in">
             <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
@@ -404,6 +420,7 @@
       <wvobject type="group" fp_name="group69">
          <obj_property name="label">bf</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf/data_in">
             <obj_property name="ElementShortName">data_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
@@ -543,6 +560,7 @@
       <wvobject type="group" fp_name="group69">
          <obj_property name="label">bf</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf/data_in">
             <obj_property name="ElementShortName">data_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
@@ -682,6 +700,7 @@
       <wvobject type="group" fp_name="group69">
          <obj_property name="label">bf</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf/data_in">
             <obj_property name="ElementShortName">data_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
@@ -821,6 +840,7 @@
       <wvobject type="group" fp_name="group69">
          <obj_property name="label">bf</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf/data_in">
             <obj_property name="ElementShortName">data_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
@@ -928,6 +948,7 @@
       <wvobject type="group" fp_name="group68">
          <obj_property name="label">reg</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/shift_reg/delay_in">
             <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
@@ -951,6 +972,7 @@
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/shift_reg/reg_array">
             <obj_property name="ElementShortName">reg_array[3:0][53:0]</obj_property>
             <obj_property name="ObjectShortName">reg_array[3:0][53:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/shift_reg/REG_SIZE">
             <obj_property name="ElementShortName">REG_SIZE[31:0]</obj_property>
@@ -960,6 +982,7 @@
       <wvobject type="group" fp_name="group69">
          <obj_property name="label">bf</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf/data_in">
             <obj_property name="ElementShortName">data_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
@@ -1067,6 +1090,7 @@
       <wvobject type="group" fp_name="group68">
          <obj_property name="label">reg</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/shift_reg/delay_in">
             <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
@@ -1090,6 +1114,7 @@
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/shift_reg/reg_array">
             <obj_property name="ElementShortName">reg_array[1:0][53:0]</obj_property>
             <obj_property name="ObjectShortName">reg_array[1:0][53:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/shift_reg/REG_SIZE">
             <obj_property name="ElementShortName">REG_SIZE[31:0]</obj_property>
@@ -1099,6 +1124,7 @@
       <wvobject type="group" fp_name="group69">
          <obj_property name="label">bf</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf/data_in">
             <obj_property name="ElementShortName">data_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
@@ -1206,6 +1232,7 @@
       <wvobject type="group" fp_name="group68">
          <obj_property name="label">reg</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/shift_reg/delay_in">
             <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
@@ -1229,6 +1256,7 @@
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/shift_reg/reg_array">
             <obj_property name="ElementShortName">reg_array[0:0][53:0]</obj_property>
             <obj_property name="ObjectShortName">reg_array[0:0][53:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
          </wvobject>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/shift_reg/REG_SIZE">
             <obj_property name="ElementShortName">REG_SIZE[31:0]</obj_property>
@@ -1238,6 +1266,7 @@
       <wvobject type="group" fp_name="group69">
          <obj_property name="label">bf</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf/data_in">
             <obj_property name="ElementShortName">data_in[53:0]</obj_property>
             <obj_property name="ObjectShortName">data_in[53:0]</obj_property>

@@ -26,16 +26,16 @@ module FFT512
     SDF_mod #(.S(4), .SHIFT_SUM_EN(0), .SHIFT_DIFF_EN(0), .POINTS(512)) sdf4 (.data_in(data_buffer34), .val_in(val34), .clk(clk), .rst(rst), .data_out(data_buffer45), .val_out(val45));
     SDF_mod #(.S(5), .SHIFT_SUM_EN(0), .SHIFT_DIFF_EN(0), .POINTS(512)) sdf5 (.data_in(data_buffer45), .val_in(val45), .clk(clk), .rst(rst), .data_out(data_buffer56), .val_out(val56));
     SDF_mod #(.S(6), .SHIFT_SUM_EN(0), .SHIFT_DIFF_EN(0), .POINTS(512)) sdf6 (.data_in(data_buffer56), .val_in(val56), .clk(clk), .rst(rst), .data_out(data_buffer67), .val_out(val67));
-    SDF_mod #(.S(7), .SHIFT_SUM_EN(1), .SHIFT_DIFF_EN(1), .POINTS(512)) sdf7 (.data_in(data_buffer67), .val_in(val67), .clk(clk), .rst(rst), .data_out(data_buffer78), .val_out(val78));
-    SDF_mod #(.S(8), .SHIFT_SUM_EN(1), .SHIFT_DIFF_EN(1), .POINTS(512)) sdf8 (.data_in(data_buffer78), .val_in(val78), .clk(clk), .rst(rst), .data_out(data_buffer89), .val_out(val89));
-    SDF_mod #(.S(9), .SHIFT_SUM_EN(1), .SHIFT_DIFF_EN(1), .POINTS(512)) sdf9 (.data_in(data_buffer89), .val_in(val89), .clk(clk), .rst(rst), .data_out(data_out), .val_out(val_out));
+    SDF_mod #(.S(7), .SHIFT_SUM_EN(0), .SHIFT_DIFF_EN(0), .POINTS(512)) sdf7 (.data_in(data_buffer67), .val_in(val67), .clk(clk), .rst(rst), .data_out(data_buffer78), .val_out(val78));
+    SDF_mod #(.S(8), .SHIFT_SUM_EN(0), .SHIFT_DIFF_EN(0), .POINTS(512)) sdf8 (.data_in(data_buffer78), .val_in(val78), .clk(clk), .rst(rst), .data_out(data_buffer89), .val_out(val89));
+    SDF_mod #(.S(9), .SHIFT_SUM_EN(0), .SHIFT_DIFF_EN(0), .POINTS(512)) sdf9 (.data_in(data_buffer89), .val_in(val89), .clk(clk), .rst(rst), .data_out(data_out), .val_out(val_out));
     
 endmodule
 
 
 module tb_FFT512;
     localparam int POINTS = 512;
-    localparam int NUM_CASES = 6;
+    localparam int NUM_CASES = 7;
     localparam TOL = 700;
 
     logic [DATA_INP-1:0] data_in = '0;
@@ -74,6 +74,34 @@ module tb_FFT512;
                         dut.val56, dut.val67,
                         dut.val78, dut.val89,
                         dut.val_out};
+                        
+                        
+   logic [1:9][DATA_W-1:0] twiddle_i_ip1;
+   assign twiddle_i_ip1 = {dut.sdf1.bf_fsm.twiddle, dut.sdf2.bf_fsm.twiddle,
+                           dut.sdf3.bf_fsm.twiddle, dut.sdf4.bf_fsm.twiddle,
+                           dut.sdf5.bf_fsm.twiddle, dut.sdf6.bf_fsm.twiddle,
+                           dut.sdf7.bf_fsm.twiddle, dut.sdf8.bf_fsm.twiddle,
+                           dut.sdf9.bf_fsm.twiddle};
+                           
+    logic [1:9] bf_on_i_ip1;
+    assign bf_on_i_ip1 = '{dut.sdf1.bf_on, dut.sdf2.bf_on,
+                           dut.sdf3.bf_on, dut.sdf4.bf_on,
+                           dut.sdf5.bf_on, dut.sdf6.bf_on,
+                           dut.sdf7.bf_on, dut.sdf8.bf_on,
+                           dut.sdf9.bf_on};
+
+                        
+   //-------------------------//
+   // Checking Stages Outputs //
+   //-------------------------//
+    
+    logic signed [DATA-1:0] s1;
+    logic signed [DATA/2-1:0] s1_re, s1_im;
+    assign s1 = data_buffer_i_ip1[1];
+    assign {s1_re, s1_im} = s1;
+    int fd_stage[1:9];
+    int fd_dbg;
+
     
     class FileBlockLoader #(int WIDTH = 18, int POINTS = 512, int IS_OUTPUT = 1);               
         task automatic load_512_block (input int fd, output logic [WIDTH-1:0] vec[0:POINTS-1][0:IS_OUTPUT]);
@@ -142,11 +170,14 @@ module tb_FFT512;
                 if (abs_im > max_abs_im[i]) max_abs_im[i] <= abs_im;
             end
         end
-    end 
+    end
+
     
     initial
     begin
+        automatic int watchdog = 0;
         automatic int fd_inp, fd_out;
+        automatic int fd_stage1;
         automatic int in_idx  = 0, out_idx = 0;
         automatic int abs_e_re, abs_e_im;
         
@@ -155,6 +186,27 @@ module tb_FFT512;
   
         fd_inp  = $fopen("fft_input_sv.mem",  "r");
         fd_out = $fopen("fft_output_sv.mem", "r");
+        
+        fd_dbg = $fopen("fft_dbg.txt", "w");
+  
+        
+        fd_stage[1] = $fopen("stage1_hw.txt","w");
+        fd_stage[2] = $fopen("stage2_hw.txt","w");
+        fd_stage[3] = $fopen("stage3_hw.txt","w");
+        fd_stage[4] = $fopen("stage4_hw.txt","w");
+        fd_stage[5] = $fopen("stage5_hw.txt","w");
+        fd_stage[6] = $fopen("stage6_hw.txt","w");
+        fd_stage[7] = $fopen("stage7_hw.txt","w");
+        fd_stage[8] = $fopen("stage8_hw.txt","w");
+        fd_stage[9] = $fopen("stage9_hw.txt","w");
+        
+        if (!fd_dbg) $fatal(1, "Could not open fft_dbg.txt");
+        
+        foreach(fd_stage[i])
+        begin
+            if (fd_stage[i] == 0) $fatal(1, "Failed to open stage%01d_hw.txt", i);
+        end
+            
         if (!fd_inp || !fd_out) $fatal(1, "Cannot open mem files");
         
         inp_fbl  = new;
@@ -166,7 +218,7 @@ module tb_FFT512;
         wait_cp(1); //test it
         
         rst <= 0;
-        val_in <= 1; //enable
+        val_in <= 1'b1;
         
         max_err_re = 0;
         max_err_im = 0;
@@ -179,22 +231,39 @@ module tb_FFT512;
             load_input_output_arrays(fd_inp, data_in_arr, fd_out, data_out_arr, inp_fbl, out_fbl);
             
             // keep clocking until all inputs driven AND all outputs checked
-            while (out_idx < POINTS) 
+            while (out_idx < POINTS && watchdog < 20000) 
             begin
-                @(posedge clk);
+                
+                for (int i = 1; i < 10; ++i)
+                begin
+                    if (val_i_ip1[i]) 
+                    begin
+                        $fdisplay(fd_dbg, "bin=%0d s%0d_re=%0d s%0d_im=%0d tw=0x%h bf_on=%0b",
+                                  out_idx, i, (i==1 ? dut.data_in_ext[DATA-1:DATA/2] : data_buffer_i_ip1[i-1][DATA-1:DATA/2]),
+                                  i, (i==1 ? dut.data_in_ext[DATA/2-1:0] : data_buffer_i_ip1[i-1][DATA/2-1:0]),
+                                  twiddle_i_ip1[i], bf_on_i_ip1[i]);
+                    end
+                end
+                
+                for (int s = 1; s <= 9; s++) 
+                begin
+                    if (val_i_ip1[s]) begin
+                        automatic logic signed [DATA/2-1:0] re_s;
+                        automatic logic signed [DATA/2-1:0] im_s;
+                        re_s = data_buffer_i_ip1[s][DATA-1 : DATA/2];
+                        im_s = data_buffer_i_ip1[s][DATA/2-1 : 0];
+                        $fdisplay(fd_stage[s], "%0d %0d", re_s, im_s);
+                    end
+                end
             
                 // drive next input sample if we still have any
                 if (in_idx < POINTS) 
                 begin
                     data_in <= data_in_arr[in_idx][0];
-                    val_in  <= 1;
                     in_idx++;
                 end 
                 
-                else 
-                begin
-                    val_in <= 0;
-                end
+                @(posedge clk);
                 
                 exp_re = data_out_arr[out_idx][0];
                 exp_im = data_out_arr[out_idx][1];
@@ -231,6 +300,13 @@ module tb_FFT512;
 
         $fclose(fd_inp);
         $fclose(fd_out);
+        
+        for (int s = 1; s <= 9; s++) 
+        begin
+            $fclose(fd_stage[s]);
+        end
+        
+        $fclose(fd_dbg);
         
         
         #10000;

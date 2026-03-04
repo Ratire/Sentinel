@@ -20,9 +20,10 @@ module SDF_mod
     logic bf_on;
     logic [DATA_W-1:0] twiddle;
     logic [DATA-1:0] data_out_int, delay_in_int, delay_out;
+    logic [$clog2(POINTS)-1:0] counter;
     
-    Butterfly_FSM #(.MTI(DELAY_BUFFER_SIZE), .STRIDE(STRIDE)) bf_fsm (.val_in(val_in), .clk(clk), .rst(rst), .twiddle(twiddle), .bf_on(bf_on), .val_out(val_out));
-    Shift_Reg #(.REG_SIZE(DELAY_BUFFER_SIZE)) shift_reg (.delay_in(delay_in_int), .clk(clk), .rst(rst), .val_in(val_in), .delay_out(delay_out));
+    Butterfly_FSM #(.MTI(DELAY_BUFFER_SIZE), .STRIDE(STRIDE), .POINTS(POINTS)) bf_fsm (.val_in(val_in), .clk(clk), .rst(rst), .twiddle(twiddle), .bf_on(bf_on), .val_out(val_out), .counter(counter));
+    Shift_Reg #(.REG_SIZE(DELAY_BUFFER_SIZE), .POINTS(POINTS)) shift_reg (.delay_in(delay_in_int), .clk(clk), .rst(rst), .val_in(val_in), .delay_out(delay_out), .counter(counter));
     Butterfly #(.SHIFT_SUM_EN(SHIFT_SUM_EN), .SHIFT_DIFF_EN(SHIFT_DIFF_EN)) bf (.data_in(data_in), .delay_out(delay_out), .twiddle(twiddle), .bf_on(bf_on), .data_out(data_out), .delay_in(delay_in_int));
     
 endmodule

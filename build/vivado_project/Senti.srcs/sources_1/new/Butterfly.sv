@@ -67,8 +67,16 @@ module Butterfly
             end
         else
             begin
+            /*
             data_out_s.r_val = data_in_s.r_val;
             data_out_s.c_val = data_in_s.c_val;
+            
+            delay_in_s.r_val = data_in_s.r_val;
+            delay_in_s.c_val = data_in_s.c_val;
+            */
+            
+            data_out_s.r_val = delay_out_s.r_val;
+            data_out_s.c_val = delay_out_s.c_val;
             
             delay_in_s.r_val = data_in_s.r_val;
             delay_in_s.c_val = data_in_s.c_val;

@@ -183,7 +183,7 @@ module tb_FFT512_Reorder;
 
 
         for (int z = 0; z < NUM_CASES; ++z) begin
-            in_idx  = -1;
+            in_idx  = 0;
             out_idx = 0;
 
             load_input_output_arrays(fd_inp, data_in_arr,
@@ -192,7 +192,7 @@ module tb_FFT512_Reorder;
 
             // keep clocking until all outputs for this case are seen
             while (out_idx < POINTS) begin
-                @(posedge clk);
+                
 
                 // drive next input sample if we still have any
                 if (in_idx < POINTS) begin
@@ -203,7 +203,9 @@ module tb_FFT512_Reorder;
                 else begin
                     val_in <= 0;
                 end
-
+                
+                @(posedge clk);
+                
                 exp_re = data_out_arr[out_idx][0];
                 exp_im = data_out_arr[out_idx][1];
 

@@ -158,8 +158,7 @@ def fft512_fixed_q1_17_block(int_block):
         xr_nat[br_idx] = xr[i]
         xi_nat[br_idx] = xi[i]
 
-    #return xr_nat, xi_nat
-    return xr, xi
+    return xr_nat, xi_nat
 
 def generating_output_data_file_for_sv(input_path, output_path):
     data_gen = expanded_sectioned_file_reader(input_path)

@@ -35,7 +35,7 @@ endmodule
 
 module tb_FFT512;
     localparam int POINTS = 512;
-    localparam int NUM_CASES = 7;
+    localparam int NUM_CASES = 7; 
     localparam TOL = 700;
 
     logic [DATA_INP-1:0] data_in = '0;
@@ -230,6 +230,15 @@ module tb_FFT512;
             in_idx  = 0; out_idx = 0;
             load_input_output_arrays(fd_inp, data_in_arr, fd_out, data_out_arr, inp_fbl, out_fbl);
             
+            /*
+            rst    <= 1;
+            val_in <= 0;
+            wait_cp(2);    // 2 clocks of reset (or whatever you like)
+            rst    <= 0;
+            wait_cp(1);    // 1 clock to let it settle
+            val_in <= 1;   // now stream 512 valid samples
+            */
+            
             // keep clocking until all inputs driven AND all outputs checked
             while (out_idx < POINTS && watchdog < 20000) 
             begin
@@ -261,7 +270,14 @@ module tb_FFT512;
                 begin
                     data_in <= data_in_arr[in_idx][0];
                     in_idx++;
+                    val_in <= 1;
                 end 
+                
+                else
+                begin
+                    val_in <= 0;
+                end
+                
                 
                 @(posedge clk);
                 

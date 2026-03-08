@@ -1,0 +1,112 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Addressing View_ScaleFactor":"1.0",
+   "Addressing View_TopLeft":"-535,-267",
+   "Clocking and Reset View_ExpandedHierarchyInLayout":"",
+   "Clocking and Reset View_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 1 -x 330 -y -300 -defaultsOSRD
+preplace inst sentinel_fft512_reor_0 -pg 1 -lvl 1 -x 330 -y -760 -defaultsOSRD
+preplace inst rst_ps8_0_99M -pg 1 -lvl 2 -x 820 -y -280 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 1 -x 330 -y -1140 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 3 -x 1220 -y -360 -defaultsOSRD
+preplace inst smartconnect_0 -pg 1 -lvl 2 -x 820 -y -160 -defaultsOSRD
+preplace inst fft512_axishim_0 -pg 1 -lvl 3 -x 1220 -y -1100 -defaultsOSRD
+preplace netloc fft512_axishim_0_fft_datain 1 0 4 50 -870 610J -830 990J -1210 1410
+preplace netloc fft512_axishim_0_fft_valin 1 0 4 60 -860 600J -820 1000J -1200 1390
+preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 0 3 60 -850 NJ -850 990
+preplace netloc rst_ps8_0_99M_peripheral_reset 1 0 3 50 -880 610J -840 1000
+preplace netloc sentinel_fft512_reor_0_data_out 1 1 2 NJ -770 1040
+preplace netloc sentinel_fft512_reor_0_val_out 1 1 2 NJ -750 1030
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 3 40 -400 650 -400 1120
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 1 1 640 -310n
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 1 2 NJ -1140 N
+preplace netloc axi_smc_M00_AXI 1 0 4 30 -1260 NJ -1260 NJ -1260 1290
+preplace netloc fft512_axishim_0_m_axis 1 0 4 60 -1240 NJ -1240 NJ -1240 1400
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 1 2 650 -380 990J
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM1_FPD 1 1 2 630J -390 N
+levelinfo -pg 1 0 330 820 1220 1430
+pagesize -pg 1 -db -bbox -sgen 0 -1300 1430 180
+",
+   "Clocking and Reset View_ScaleFactor":"0.751542",
+   "Clocking and Reset View_TopLeft":"13,-1227",
+   "Color Coded_ExpandedHierarchyInLayout":"",
+   "Color Coded_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 2 -x 710 -y 370 -defaultsOSRD
+preplace inst sentinel_fft512_reor_0 -pg 1 -lvl 2 -x 710 -y 120 -defaultsOSRD
+preplace inst rst_ps8_0_99M -pg 1 -lvl 1 -x 210 -y 530 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 4 -x 1560 -y 360 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 3 -x 1200 -y 380 -defaultsOSRD
+preplace inst smartconnect_0 -pg 1 -lvl 1 -x 210 -y 330 -defaultsOSRD
+preplace inst fft512_axishim_0 -pg 1 -lvl 3 -x 1200 -y 110 -defaultsOSRD
+preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 1 3 N 570 1040 290 1360J
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 4 40 420 380 270 1030 280 1370
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 0 3 30 430 410J 250 1010
+preplace netloc rst_ps8_0_99M_peripheral_reset 1 1 2 390 260 1020
+preplace netloc sentinel_fft512_reor_0_val_out 1 2 1 N 130
+preplace netloc sentinel_fft512_reor_0_data_out 1 2 1 1010 110n
+preplace netloc fft512_axishim_0_fft_valin 1 1 3 410 210 NJ 210 1370
+preplace netloc fft512_axishim_0_fft_datain 1 1 3 400 220 NJ 220 1360
+preplace netloc axi_dma_0_M_AXI_MM2S 1 0 5 20 230 NJ 230 NJ 230 NJ 230 1730
+preplace netloc axi_dma_0_M_AXI_S2MM 1 0 5 40 240 NJ 240 NJ 240 NJ 240 1740
+preplace netloc axi_smc_M00_AXI 1 3 1 1380 310n
+preplace netloc smartconnect_0_M00_AXI 1 1 1 N 330
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 2 1 1020 330n
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM1_FPD 1 2 1 N 350
+preplace netloc fft512_axishim_0_m_axis 1 3 1 1390 90n
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 3 1040 10 NJ 10 1750
+levelinfo -pg 1 0 210 710 1200 1560 1770
+pagesize -pg 1 -db -bbox -sgen 0 0 1770 630
+",
+   "Color Coded_ScaleFactor":"1.172",
+   "Color Coded_TopLeft":"10,-9",
+   "Default View_ScaleFactor":"0.676",
+   "Default View_TopLeft":"10,-343",
+   "Display-IntfAXI4Lite":"true",
+   "Display-IntfAXIStream":"true",
+   "Display-IntfTypeAXIMM":"true",
+   "Display-PortTypeClock":"true",
+   "Display-PortTypeOthers":"true",
+   "Display-PortTypeReset":"true",
+   "ExpandedHierarchyInLayout":"",
+   "Grouping and No Loops_Layers":"/zynq_ultra_ps_e_0_pl_resetn0:true|/rst_ps8_0_99M_peripheral_aresetn:true|/zynq_ultra_ps_e_0_pl_clk0:true|/rst_ps8_0_99M_peripheral_reset:true|",
+   "Grouping and No Loops_ScaleFactor":"1.0",
+   "Grouping and No Loops_TopLeft":"-263,-46",
+   "Interfaces View_Layers":"/zynq_ultra_ps_e_0_pl_resetn0:false|/rst_ps8_0_99M_peripheral_aresetn:false|/zynq_ultra_ps_e_0_pl_clk0:false|/rst_ps8_0_99M_peripheral_reset:false|",
+   "Interfaces View_ScaleFactor":"1.0",
+   "Interfaces View_TopLeft":"-518,-255",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 2 -x 720 -y 370 -defaultsOSRD
+preplace inst sentinel_fft512_reor_0 -pg 1 -lvl 2 -x 720 -y 120 -defaultsOSRD
+preplace inst rst_ps8_0_99M -pg 1 -lvl 1 -x 210 -y 530 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 4 -x 1580 -y 360 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 3 -x 1230 -y 380 -defaultsOSRD
+preplace inst smartconnect_0 -pg 1 -lvl 1 -x 210 -y 330 -defaultsOSRD
+preplace inst fft512_axishim_0 -pg 1 -lvl 3 -x 1230 -y 110 -defaultsOSRD
+preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 1 3 N 570 1060 500 1410J
+preplace netloc rst_ps8_0_99M_peripheral_reset 1 1 2 400 20 1060
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 4 20 230 410 30 1040 470 1400
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 0 3 30 430 380J 470 1020
+preplace netloc fft512_axishim_0_fft_valin 1 1 3 420 10 NJ 10 1390
+preplace netloc fft512_axishim_0_fft_datain 1 1 3 420 210 NJ 210 1390
+preplace netloc sentinel_fft512_reor_0_val_out 1 2 1 N 130
+preplace netloc sentinel_fft512_reor_0_data_out 1 2 1 1050 110n
+preplace netloc axi_dma_0_M_AXI_MM2S 1 0 5 40 240 NJ 240 NJ 240 NJ 240 1750
+preplace netloc axi_dma_0_M_AXI_S2MM 1 0 5 40 420 390J 480 NJ 480 NJ 480 1760
+preplace netloc axi_smc_M00_AXI 1 3 1 1390 310n
+preplace netloc smartconnect_0_M00_AXI 1 1 1 N 330
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 2 1 1030 330n
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM1_FPD 1 2 1 N 350
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 3 1070 490 NJ 490 1750
+preplace netloc fft512_axishim_0_m_axis 1 3 1 1400 90n
+levelinfo -pg 1 0 210 720 1230 1580 1780
+pagesize -pg 1 -db -bbox -sgen 0 0 1780 630
+"
+}
+{
+   "da_axi4_cnt":"4",
+   "da_clkrst_cnt":"5",
+   "da_zynq_ultra_ps_e_cnt":"2"
+}

@@ -139,3 +139,6 @@ build/vivado_project/*.xpr  # Since I don't want to track the project file itsel
 
 build/vivado_project/Senti.gen/
 build/vivado_project/Senti.srcs/sources_1/new/
+__pycache__/
+*.pyc
+build/vivado_project/Waveforms/

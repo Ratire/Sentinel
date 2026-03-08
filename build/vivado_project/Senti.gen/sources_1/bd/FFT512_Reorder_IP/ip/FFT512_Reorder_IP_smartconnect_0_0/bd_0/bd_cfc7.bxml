@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root MajorVersion="0" MinorVersion="43">
+  <CompositeFile CompositeFileTopName="bd_cfc7" CanBeSetAsTop="true" CanDisplayChildGraph="true">
+    <Description>Composite Fileset</Description>
+    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1772881485"/>
+    <Generation Name="SIMULATION" State="RESET" Timestamp="1772881485"/>
+    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1772881484"/>
+    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1772881484"/>
+    <Generation Name="INSTANTIATION_TEMPLATE" State="STALE" Timestamp="1772881484"/>
+    <FileCollection Name="SOURCES" Type="SOURCES"/>
+  </CompositeFile>
+</Root>

@@ -87,7 +87,7 @@ Distance2GoL I/Q → PMOD ADC → PS Buffer → FFT512ReorderIP → Doppler Magn
 
 
 ## Repository Structure
-'''
+```
 Senti/
 ├── build/                      # Vivado/Vitis build outputs (gitignored)
 │   ├── bitstreams/
@@ -129,7 +129,7 @@ Senti/
 │   └── linux_apps/             # Linux applications (if needed)
 ├── LICENSE
 └── README.md
-'''
+```
 
 ## Technical Specifications
 

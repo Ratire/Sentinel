@@ -100,6 +100,10 @@ Senti/
 │   ├── sketches/
 │   ├── timing_reports/
 │   └── weekly_reports/
+├── hardware/                   # Hardware platform files
+│   └── block_design/           # Vivado block design and IP configs
+│       ├── FFT512_Reorder_IP.bd
+│       └── ip/
 ├── scripts/                    # Python utility scripts
 │   └── generating_twiddles/
 │       ├── generating_twiddles.py
@@ -109,19 +113,35 @@ Senti/
 │   │   ├── FFT_BF_GM/          # Butterfly golden model
 │   │   └── FFT_GM/             # Full FFT golden model
 │   ├── testbenches/            # SystemVerilog testbenches
+│   │   ├── tb_Butterfly.sv
+│   │   ├── tb_Butterfly_FSM.sv
+│   │   ├── tb_FFT512.sv
+│   │   ├── tb_FFT512_Reorder.sv
+│   │   ├── tb_Reorder_Buffer.sv
+│   │   ├── tb_SDF_mod.sv
+│   │   └── tb_Shift_Reg.sv
 │   └── waveforms/              # Vivado waveform configs
 ├── src/                        # RTL source and constraints
 │   ├── constraints/
 │   │   └── kv260.xdc
 │   ├── ip/                     # Packaged Vivado IPs
 │   │   ├── fft_ip/             # FFT512ReorderIP (frozen)
+│   │   │   ├── component.xml
+│   │   │   ├── src/
+│   │   │   └── xgui/
 │   │   └── systolic_ip/        # Systolic array (in dev)
 │   └── rtl/                    # SystemVerilog source code
-│       ├── axi_interfaces/     # AXI-Stream shim (to be implemented)
+│       ├── axi_interfaces/     # AXI-Stream shim
+│       │   └── fft512_axishim.v
 │       ├── fft_core/           # SDF FFT implementation
-│       ├── i2s_receiver/       # Microphone interface
-│       ├── radar_dsp/          # Radar processing blocks
-│       ├── systolic_array/     # 16x16 MAC array
+│       │   ├── Butterfly.sv
+│       │   ├── Butterfly_FSM.sv
+│       │   ├── FFT512.sv
+│       │   ├── FFT512_Reorder_IP.sv
+│       │   ├── FFT_pkg.sv
+│       │   ├── Reorder_Buffer.sv
+│       │   ├── SDF_mod.sv
+│       │   └── Shift_Reg.sv
 │       └── top.sv              # Top-level wrapper
 ├── sw/                         # Software applications
 │   ├── baremetal/              # Vitis bare-metal apps

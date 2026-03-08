@@ -142,3 +142,7 @@ build/vivado_project/Senti.srcs/sources_1/new/
 __pycache__/
 *.pyc
 build/vivado_project/Waveforms/
+build/vivado_project/Senti.srcs/
+build/vivado_project/*.xpr
+*.bda
+*/ui/*.ui

@@ -103,3 +103,46 @@
 */*/*/bd/*/ip/*/*.tcl
 hw_handoff
 ipshared
+
+#------------------------
+# User Additions (by me)
+#------------------------
+
+# Simulation directories and files
+*.sim/
+xsim.dir/
+
+# Waveform database files
+*.wdb
+
+# XSim tool artifacts
+xsim.*
+xvlog.*
+xelab.*
+
+# User-specific project settings
+*.xpr.user
+
+# Simulation dumps
+*.vcd
+*.saif
+
+# Extra additions to get rid of the Vivado Project Generated Files
+build/vivado_project/*.gen/
+build/vivado_project/*.cache/
+build/vivado_project/*.hw/
+build/vivado_project/*.ip_user_files/
+build/vivado_project/*.runs/
+build/vivado_project/*.sim/
+build/vivado_project/*.tmp/
+build/vivado_project/*.xpr  # Since I don't want to track the project file itself
+
+build/vivado_project/Senti.gen/
+build/vivado_project/Senti.srcs/sources_1/new/
+__pycache__/
+*.pyc
+build/vivado_project/Waveforms/
+build/vivado_project/Senti.srcs/
+build/vivado_project/*.xpr
+*.bda
+*/ui/*.ui

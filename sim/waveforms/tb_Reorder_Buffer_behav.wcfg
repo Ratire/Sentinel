@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_Reorder_Buffer_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_Reorder_Buffer" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="157.795 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,069.140 ns"></ZoomEndTime>
+      <Cursor1Time time="435.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="230"></NameColumnWidth>
+      <ValueColumnWidth column_width="61"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject type="logic" fp_name="/tb_Reorder_Buffer/dut/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_Reorder_Buffer/dut/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_Reorder_Buffer/dut/val_fft">
+      <obj_property name="ElementShortName">val_fft</obj_property>
+      <obj_property name="ObjectShortName">val_fft</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/fft_output">
+      <obj_property name="ElementShortName">fft_output[53:0]</obj_property>
+      <obj_property name="ObjectShortName">fft_output[53:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="radix_realType">UNSIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">0</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/fft_fixed_output">
+      <obj_property name="ElementShortName">fft_fixed_output[53:0]</obj_property>
+      <obj_property name="ObjectShortName">fft_fixed_output[53:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_Reorder_Buffer/dut/val_out_rb">
+      <obj_property name="ElementShortName">val_out_rb</obj_property>
+      <obj_property name="ObjectShortName">val_out_rb</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_Reorder_Buffer/dut/send_sel">
+      <obj_property name="ElementShortName">send_sel</obj_property>
+      <obj_property name="ObjectShortName">send_sel</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array">
+      <obj_property name="ElementShortName">buffer_array[0:1]</obj_property>
+      <obj_property name="ObjectShortName">buffer_array[0:1]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0]">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">[0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer">
+            <obj_property name="ElementShortName">.buffer[0:15][53:0]</obj_property>
+            <obj_property name="ObjectShortName">.buffer[0:15][53:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[0]">
+               <obj_property name="ElementShortName">[0][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[1]">
+               <obj_property name="ElementShortName">[1][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[2]">
+               <obj_property name="ElementShortName">[2][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[3]">
+               <obj_property name="ElementShortName">[3][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[3][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[4]">
+               <obj_property name="ElementShortName">[4][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[4][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[5]">
+               <obj_property name="ElementShortName">[5][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[5][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[6]">
+               <obj_property name="ElementShortName">[6][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[6][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[7]">
+               <obj_property name="ElementShortName">[7][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[7][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[8]">
+               <obj_property name="ElementShortName">[8][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[8][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[9]">
+               <obj_property name="ElementShortName">[9][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[9][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[10]">
+               <obj_property name="ElementShortName">[10][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[10][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[11]">
+               <obj_property name="ElementShortName">[11][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[11][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[12]">
+               <obj_property name="ElementShortName">[12][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[12][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[13]">
+               <obj_property name="ElementShortName">[13][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[13][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[14]">
+               <obj_property name="ElementShortName">[14][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[14][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].buffer[15]">
+               <obj_property name="ElementShortName">[15][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[15][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].wr_count">
+            <obj_property name="ElementShortName">.wr_count[3:0]</obj_property>
+            <obj_property name="ObjectShortName">.wr_count[3:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].rd_count">
+            <obj_property name="ElementShortName">.rd_count[3:0]</obj_property>
+            <obj_property name="ObjectShortName">.rd_count[3:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[0].status">
+            <obj_property name="ElementShortName">.status[1:0]</obj_property>
+            <obj_property name="ObjectShortName">.status[1:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1]">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">[1]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer">
+            <obj_property name="ElementShortName">.buffer[0:15][53:0]</obj_property>
+            <obj_property name="ObjectShortName">.buffer[0:15][53:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[0]">
+               <obj_property name="ElementShortName">[0][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[0][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[1]">
+               <obj_property name="ElementShortName">[1][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[1][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[2]">
+               <obj_property name="ElementShortName">[2][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[2][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[3]">
+               <obj_property name="ElementShortName">[3][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[3][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[4]">
+               <obj_property name="ElementShortName">[4][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[4][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[5]">
+               <obj_property name="ElementShortName">[5][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[5][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[6]">
+               <obj_property name="ElementShortName">[6][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[6][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[7]">
+               <obj_property name="ElementShortName">[7][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[7][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[8]">
+               <obj_property name="ElementShortName">[8][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[8][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[9]">
+               <obj_property name="ElementShortName">[9][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[9][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[10]">
+               <obj_property name="ElementShortName">[10][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[10][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[11]">
+               <obj_property name="ElementShortName">[11][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[11][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[12]">
+               <obj_property name="ElementShortName">[12][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[12][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[13]">
+               <obj_property name="ElementShortName">[13][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[13][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[14]">
+               <obj_property name="ElementShortName">[14][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[14][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].buffer[15]">
+               <obj_property name="ElementShortName">[15][53:0]</obj_property>
+               <obj_property name="ObjectShortName">[15][53:0]</obj_property>
+               <obj_property name="Radix">BINARYRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].wr_count">
+            <obj_property name="ElementShortName">.wr_count[3:0]</obj_property>
+            <obj_property name="ObjectShortName">.wr_count[3:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].rd_count">
+            <obj_property name="ElementShortName">.rd_count[3:0]</obj_property>
+            <obj_property name="ObjectShortName">.rd_count[3:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/buffer_array[1].status">
+            <obj_property name="ElementShortName">.status[1:0]</obj_property>
+            <obj_property name="ObjectShortName">.status[1:0]</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/POINTS">
+      <obj_property name="ElementShortName">POINTS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">POINTS[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Reorder_Buffer/dut/COUNTER_BITS">
+      <obj_property name="ElementShortName">COUNTER_BITS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">COUNTER_BITS[31:0]</obj_property>
+   </wvobject>
+</wave_config>

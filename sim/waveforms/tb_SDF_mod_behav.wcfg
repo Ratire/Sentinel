@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_SDF_mod_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="FFT_pkg" />
+            <top_module name="glbl" />
+            <top_module name="tb_SDF_mod" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="8.469 ns"></ZoomStartTime>
+      <ZoomEndTime time="135.870 ns"></ZoomEndTime>
+      <Cursor1Time time="75.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="153"></NameColumnWidth>
+      <ValueColumnWidth column_width="88"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="6" />
+   <wvobject type="logic" fp_name="/tb_SDF_mod/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_SDF_mod/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group87">
+      <obj_property name="label">SDF</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/tb_SDF_mod/data_in">
+         <obj_property name="ElementShortName">data_in[53:0]</obj_property>
+         <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_SDF_mod/val_in">
+         <obj_property name="ElementShortName">val_in</obj_property>
+         <obj_property name="ObjectShortName">val_in</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_SDF_mod/data_out">
+         <obj_property name="ElementShortName">data_out[53:0]</obj_property>
+         <obj_property name="ObjectShortName">data_out[53:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_SDF_mod/val_out">
+         <obj_property name="ElementShortName">val_out</obj_property>
+         <obj_property name="ObjectShortName">val_out</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group88">
+      <obj_property name="label">bf_fsm</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/tb_SDF_mod/dut/bf_fsm/twiddle">
+         <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+         <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_SDF_mod/dut/bf_fsm/bf_on">
+         <obj_property name="ElementShortName">bf_on</obj_property>
+         <obj_property name="ObjectShortName">bf_on</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_SDF_mod/dut/bf_fsm/val_out">
+         <obj_property name="ElementShortName">val_out</obj_property>
+         <obj_property name="ObjectShortName">val_out</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_SDF_mod/dut/bf_fsm/current_state">
+         <obj_property name="ElementShortName">current_state[1:0]</obj_property>
+         <obj_property name="ObjectShortName">current_state[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_SDF_mod/dut/bf_fsm/next_state">
+         <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+         <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_SDF_mod/dut/bf_fsm/n">
+         <obj_property name="ElementShortName">n[2:0]</obj_property>
+         <obj_property name="ObjectShortName">n[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_SDF_mod/dut/bf_fsm/n_max">
+         <obj_property name="ElementShortName">n_max</obj_property>
+         <obj_property name="ObjectShortName">n_max</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group110">
+      <obj_property name="label">shift_reg</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/tb_SDF_mod/dut/shift_reg/delay_in">
+         <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+         <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_SDF_mod/dut/shift_reg/delay_out">
+         <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+         <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_SDF_mod/dut/shift_reg/reg_array">
+         <obj_property name="ElementShortName">reg_array[3:0][53:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_array[3:0][53:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <wvobject type="array" fp_name="/tb_SDF_mod/dut/shift_reg/reg_array[3]">
+            <obj_property name="ElementShortName">[3][53:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][53:0]</obj_property>
+            <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_SDF_mod/dut/shift_reg/reg_array[2]">
+            <obj_property name="ElementShortName">[2][53:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][53:0]</obj_property>
+            <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_SDF_mod/dut/shift_reg/reg_array[1]">
+            <obj_property name="ElementShortName">[1][53:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][53:0]</obj_property>
+            <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_SDF_mod/dut/shift_reg/reg_array[0]">
+            <obj_property name="ElementShortName">[0][53:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][53:0]</obj_property>
+            <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group117">
+      <obj_property name="label">bf</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/tb_SDF_mod/dut/bf/data_in">
+         <obj_property name="ElementShortName">data_in[53:0]</obj_property>
+         <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_SDF_mod/dut/bf/delay_out">
+         <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+         <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_SDF_mod/dut/bf/twiddle">
+         <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+         <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_SDF_mod/dut/bf/bf_on">
+         <obj_property name="ElementShortName">bf_on</obj_property>
+         <obj_property name="ObjectShortName">bf_on</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_SDF_mod/dut/bf/data_out">
+         <obj_property name="ElementShortName">data_out[53:0]</obj_property>
+         <obj_property name="ObjectShortName">data_out[53:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_SDF_mod/dut/bf/delay_in">
+         <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+         <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,60 @@
+`timescale 1ns / 1ps
+import FFT_pkg::*; // Import all definitions
+
+module tb_Butterfly;
+    localparam int N_C = 12; //number of cases
+    localparam int N_OC = N_C*2; //number of output cases (since we are checking the output for bf_on and !bf_on
+    
+    int i = 0; //index to be used later
+    
+    logic [DATA/2-1:0] data_in_arr [0:N_C-1][0:1], delay_out_arr [0:N_C-1][0:1]; //inputs
+    logic [DATA_W/2-1:0] twiddle_arr [0:N_C-1][0:1];
+    
+    logic [DATA/2-1:0] data_out_arr [0:N_OC-1][0:1], delay_in_arr [0:N_OC-1][0:1]; //outputs
+    
+    logic [DATA-1:0] data_in, delay_out;
+    logic [DATA-1:0] data_out, delay_in, data_out_off, delay_in_off, data_out_on, delay_in_on; //the off and on versions are for testing from golden python model
+    logic [DATA_W-1:0] twiddle; 
+    logic bf_on = 0;
+    
+    assign data_in = {data_in_arr[i][0], data_in_arr[i][1]};
+    assign delay_out = {delay_out_arr[i][0], delay_out_arr[i][1]};
+    assign twiddle = {twiddle_arr[i][0], twiddle_arr[i][1]};
+    assign data_out_off = {data_out_arr[i*2][0], data_out_arr[i*2][1]};
+    assign delay_in_off = {delay_in_arr[i*2][0], delay_in_arr[i*2][1]};
+    assign data_out_on = {data_out_arr[i*2+1][0], data_out_arr[i*2+1][1]};
+    assign delay_in_on = {delay_in_arr[i*2+1][0], delay_in_arr[i*2+1][1]};
+    
+    Butterfly dut (.data_in(data_in), .delay_out(delay_out), .twiddle(twiddle), .bf_on(bf_on), .data_out(data_out), .delay_in(delay_in));
+    
+    task automatic test_bf_on_pair(input int j);
+        i = j;
+        #1;  // Let continuous assigns settle
+        
+        bf_on = 0;
+        #10;
+        assert #0 ((data_out == data_out_off) && (delay_in == delay_in_off))
+            else $error("bf_on=0 @ t=%0t: Expected data_out=0x%0h delay_in=0x%0h, Got data_out=0x%0h delay_in=0x%0h", 
+                        $time, data_out_off, delay_in_off, data_out, delay_in);
+        
+        bf_on = 1;
+        #10;
+        assert #0 ((data_out == data_out_on) && (delay_in == delay_in_on))
+            else $error("bf_on=1 @ t=%0t: Expected data_out=0x%0h delay_in=0x%0h, Got data_out=0x%0h delay_in=0x%0h", 
+                        $time, data_out_on, delay_in_on, data_out, delay_in);
+    endtask 
+
+    
+    initial
+    begin
+        $readmemh("twiddles.txt", twiddle_arr); $readmemh("data_in.txt", data_in_arr); $readmemh("delay_out.txt", delay_out_arr);
+        $readmemh("data_out.txt", data_out_arr); $readmemh("delay_in.txt", delay_in_arr);
+        
+        for(int k = 0; k < N_C; ++k)
+        begin
+            test_bf_on_pair(k);
+        end
+        $finish;
+    end
+endmodule
+

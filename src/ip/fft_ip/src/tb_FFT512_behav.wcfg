@@ -1,0 +1,1321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_FFT512_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="FFT_pkg" />
+            <top_module name="glbl" />
+            <top_module name="tb_FFT512" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="7,615.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="7,775.001 ns"></ZoomEndTime>
+      <Cursor1Time time="7,685.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="213"></NameColumnWidth>
+      <ValueColumnWidth column_width="95"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="9" />
+   <wave_markers>
+      <marker label="" time="2585000" />
+      <marker label="" time="35000" />
+      <marker label="" time="11555000" />
+      <marker label="" time="4495000" />
+      <marker label="" time="4815000" />
+      <marker label="" time="4975000" />
+      <marker label="" time="5115000" />
+      <marker label="" time="5125000" />
+      <marker label="" time="5055000" />
+      <marker label="" time="10285000" />
+      <marker label="" time="2575000" />
+      <marker label="" time="3855000" />
+      <marker label="" time="5095000" />
+   </wave_markers>
+   <wvobject type="group" fp_name="group66">
+      <obj_property name="label">sdf1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="group" fp_name="group67">
+         <obj_property name="label">fsm</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/val_out">
+            <obj_property name="ElementShortName">val_out</obj_property>
+            <obj_property name="ObjectShortName">val_out</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/current_state">
+            <obj_property name="ElementShortName">current_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">current_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/next_state">
+            <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/n">
+            <obj_property name="ElementShortName">n[8:0]</obj_property>
+            <obj_property name="ObjectShortName">n[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/n_max">
+            <obj_property name="ElementShortName">n_max</obj_property>
+            <obj_property name="ObjectShortName">n_max</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/shift_reg/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/shift_reg/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/inp_vals">
+            <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
+            <obj_property name="ObjectShortName">inp_vals[2:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/out_vals">
+            <obj_property name="ElementShortName">out_vals[1:0]</obj_property>
+            <obj_property name="ObjectShortName">out_vals[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf_fsm/twiddle_rom">
+            <obj_property name="ElementShortName">twiddle_rom[0:255][35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle_rom[0:255][35:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group68">
+         <obj_property name="label">reg</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/shift_reg/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/shift_reg/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/shift_reg/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/shift_reg/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/shift_reg/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/shift_reg/reg_array">
+            <obj_property name="ElementShortName">reg_array[255:0][53:0]</obj_property>
+            <obj_property name="ObjectShortName">reg_array[255:0][53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/shift_reg/REG_SIZE">
+            <obj_property name="ElementShortName">REG_SIZE[31:0]</obj_property>
+            <obj_property name="ObjectShortName">REG_SIZE[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group69">
+         <obj_property name="label">bf</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf/data_in">
+            <obj_property name="ElementShortName">data_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/bf/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf/data_out">
+            <obj_property name="ElementShortName">data_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf1/bf/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/bf/SHIFT_SUM_EN">
+            <obj_property name="ElementShortName">SHIFT_SUM_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_SUM_EN</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf1/bf/SHIFT_DIFF_EN">
+            <obj_property name="ElementShortName">SHIFT_DIFF_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_DIFF_EN</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66">
+      <obj_property name="label">sdf2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="group" fp_name="group67">
+         <obj_property name="label">fsm</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/val_out">
+            <obj_property name="ElementShortName">val_out</obj_property>
+            <obj_property name="ObjectShortName">val_out</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/current_state">
+            <obj_property name="ElementShortName">current_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">current_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/next_state">
+            <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/n">
+            <obj_property name="ElementShortName">n[7:0]</obj_property>
+            <obj_property name="ObjectShortName">n[7:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/n_max">
+            <obj_property name="ElementShortName">n_max</obj_property>
+            <obj_property name="ObjectShortName">n_max</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/inp_vals">
+            <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
+            <obj_property name="ObjectShortName">inp_vals[2:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/out_vals">
+            <obj_property name="ElementShortName">out_vals[1:0]</obj_property>
+            <obj_property name="ObjectShortName">out_vals[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf_fsm/twiddle_rom">
+            <obj_property name="ElementShortName">twiddle_rom[0:255][35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle_rom[0:255][35:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group68">
+         <obj_property name="label">reg</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/shift_reg/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/shift_reg/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/shift_reg/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/shift_reg/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/shift_reg/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/shift_reg/reg_array">
+            <obj_property name="ElementShortName">reg_array[127:0][53:0]</obj_property>
+            <obj_property name="ObjectShortName">reg_array[127:0][53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/shift_reg/REG_SIZE">
+            <obj_property name="ElementShortName">REG_SIZE[31:0]</obj_property>
+            <obj_property name="ObjectShortName">REG_SIZE[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group69">
+         <obj_property name="label">bf</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf/data_in">
+            <obj_property name="ElementShortName">data_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/bf/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf/data_out">
+            <obj_property name="ElementShortName">data_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf2/bf/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/bf/SHIFT_SUM_EN">
+            <obj_property name="ElementShortName">SHIFT_SUM_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_SUM_EN</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf2/bf/SHIFT_DIFF_EN">
+            <obj_property name="ElementShortName">SHIFT_DIFF_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_DIFF_EN</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66">
+      <obj_property name="label">sdf3</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="group" fp_name="group67">
+         <obj_property name="label">fsm</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/val_out">
+            <obj_property name="ElementShortName">val_out</obj_property>
+            <obj_property name="ObjectShortName">val_out</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/current_state">
+            <obj_property name="ElementShortName">current_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">current_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/next_state">
+            <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/n">
+            <obj_property name="ElementShortName">n[6:0]</obj_property>
+            <obj_property name="ObjectShortName">n[6:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/n_max">
+            <obj_property name="ElementShortName">n_max</obj_property>
+            <obj_property name="ObjectShortName">n_max</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/inp_vals">
+            <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
+            <obj_property name="ObjectShortName">inp_vals[2:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/out_vals">
+            <obj_property name="ElementShortName">out_vals[1:0]</obj_property>
+            <obj_property name="ObjectShortName">out_vals[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf_fsm/twiddle_rom">
+            <obj_property name="ElementShortName">twiddle_rom[0:255][35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle_rom[0:255][35:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group68">
+         <obj_property name="label">reg</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/shift_reg/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/shift_reg/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/shift_reg/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/shift_reg/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/shift_reg/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/shift_reg/reg_array">
+            <obj_property name="ElementShortName">reg_array[63:0][53:0]</obj_property>
+            <obj_property name="ObjectShortName">reg_array[63:0][53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/shift_reg/REG_SIZE">
+            <obj_property name="ElementShortName">REG_SIZE[31:0]</obj_property>
+            <obj_property name="ObjectShortName">REG_SIZE[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group69">
+         <obj_property name="label">bf</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf/data_in">
+            <obj_property name="ElementShortName">data_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/bf/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf/data_out">
+            <obj_property name="ElementShortName">data_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf3/bf/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/bf/SHIFT_SUM_EN">
+            <obj_property name="ElementShortName">SHIFT_SUM_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_SUM_EN</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf3/bf/SHIFT_DIFF_EN">
+            <obj_property name="ElementShortName">SHIFT_DIFF_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_DIFF_EN</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66">
+      <obj_property name="label">sdf4</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="group" fp_name="group67">
+         <obj_property name="label">fsm</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/val_out">
+            <obj_property name="ElementShortName">val_out</obj_property>
+            <obj_property name="ObjectShortName">val_out</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/current_state">
+            <obj_property name="ElementShortName">current_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">current_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/next_state">
+            <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/n">
+            <obj_property name="ElementShortName">n[5:0]</obj_property>
+            <obj_property name="ObjectShortName">n[5:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/n_max">
+            <obj_property name="ElementShortName">n_max</obj_property>
+            <obj_property name="ObjectShortName">n_max</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/inp_vals">
+            <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
+            <obj_property name="ObjectShortName">inp_vals[2:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/out_vals">
+            <obj_property name="ElementShortName">out_vals[1:0]</obj_property>
+            <obj_property name="ObjectShortName">out_vals[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf_fsm/twiddle_rom">
+            <obj_property name="ElementShortName">twiddle_rom[0:255][35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle_rom[0:255][35:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group68">
+         <obj_property name="label">reg</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/shift_reg/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf4/shift_reg/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf4/shift_reg/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf4/shift_reg/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/shift_reg/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/shift_reg/reg_array">
+            <obj_property name="ElementShortName">reg_array[31:0][53:0]</obj_property>
+            <obj_property name="ObjectShortName">reg_array[31:0][53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/shift_reg/REG_SIZE">
+            <obj_property name="ElementShortName">REG_SIZE[31:0]</obj_property>
+            <obj_property name="ObjectShortName">REG_SIZE[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group69">
+         <obj_property name="label">bf</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf/data_in">
+            <obj_property name="ElementShortName">data_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf4/bf/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf/data_out">
+            <obj_property name="ElementShortName">data_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf4/bf/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf4/bf/SHIFT_SUM_EN">
+            <obj_property name="ElementShortName">SHIFT_SUM_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_SUM_EN</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf4/bf/SHIFT_DIFF_EN">
+            <obj_property name="ElementShortName">SHIFT_DIFF_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_DIFF_EN</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66">
+      <obj_property name="label">sdf5</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="group" fp_name="group67">
+         <obj_property name="label">fsm</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/val_out">
+            <obj_property name="ElementShortName">val_out</obj_property>
+            <obj_property name="ObjectShortName">val_out</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/current_state">
+            <obj_property name="ElementShortName">current_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">current_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/next_state">
+            <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/n">
+            <obj_property name="ElementShortName">n[4:0]</obj_property>
+            <obj_property name="ObjectShortName">n[4:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/n_max">
+            <obj_property name="ElementShortName">n_max</obj_property>
+            <obj_property name="ObjectShortName">n_max</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/inp_vals">
+            <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
+            <obj_property name="ObjectShortName">inp_vals[2:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/out_vals">
+            <obj_property name="ElementShortName">out_vals[1:0]</obj_property>
+            <obj_property name="ObjectShortName">out_vals[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf_fsm/twiddle_rom">
+            <obj_property name="ElementShortName">twiddle_rom[0:255][35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle_rom[0:255][35:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group68">
+         <obj_property name="label">reg</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/shift_reg/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/shift_reg/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/shift_reg/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/shift_reg/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/shift_reg/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/shift_reg/reg_array">
+            <obj_property name="ElementShortName">reg_array[15:0][53:0]</obj_property>
+            <obj_property name="ObjectShortName">reg_array[15:0][53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/shift_reg/REG_SIZE">
+            <obj_property name="ElementShortName">REG_SIZE[31:0]</obj_property>
+            <obj_property name="ObjectShortName">REG_SIZE[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group69">
+         <obj_property name="label">bf</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf/data_in">
+            <obj_property name="ElementShortName">data_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/bf/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf/data_out">
+            <obj_property name="ElementShortName">data_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf5/bf/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/bf/SHIFT_SUM_EN">
+            <obj_property name="ElementShortName">SHIFT_SUM_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_SUM_EN</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf5/bf/SHIFT_DIFF_EN">
+            <obj_property name="ElementShortName">SHIFT_DIFF_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_DIFF_EN</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66">
+      <obj_property name="label">sdf6</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="group" fp_name="group67">
+         <obj_property name="label">fsm</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/val_out">
+            <obj_property name="ElementShortName">val_out</obj_property>
+            <obj_property name="ObjectShortName">val_out</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/current_state">
+            <obj_property name="ElementShortName">current_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">current_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/next_state">
+            <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/n">
+            <obj_property name="ElementShortName">n[3:0]</obj_property>
+            <obj_property name="ObjectShortName">n[3:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/n_max">
+            <obj_property name="ElementShortName">n_max</obj_property>
+            <obj_property name="ObjectShortName">n_max</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/inp_vals">
+            <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
+            <obj_property name="ObjectShortName">inp_vals[2:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/out_vals">
+            <obj_property name="ElementShortName">out_vals[1:0]</obj_property>
+            <obj_property name="ObjectShortName">out_vals[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf_fsm/twiddle_rom">
+            <obj_property name="ElementShortName">twiddle_rom[0:255][35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle_rom[0:255][35:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group68">
+         <obj_property name="label">reg</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/shift_reg/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf6/shift_reg/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf6/shift_reg/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf6/shift_reg/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/shift_reg/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/shift_reg/reg_array">
+            <obj_property name="ElementShortName">reg_array[7:0][53:0]</obj_property>
+            <obj_property name="ObjectShortName">reg_array[7:0][53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/shift_reg/REG_SIZE">
+            <obj_property name="ElementShortName">REG_SIZE[31:0]</obj_property>
+            <obj_property name="ObjectShortName">REG_SIZE[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group69">
+         <obj_property name="label">bf</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf/data_in">
+            <obj_property name="ElementShortName">data_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf6/bf/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf/data_out">
+            <obj_property name="ElementShortName">data_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf6/bf/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf6/bf/SHIFT_SUM_EN">
+            <obj_property name="ElementShortName">SHIFT_SUM_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_SUM_EN</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf6/bf/SHIFT_DIFF_EN">
+            <obj_property name="ElementShortName">SHIFT_DIFF_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_DIFF_EN</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66">
+      <obj_property name="label">sdf7</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="group" fp_name="group67">
+         <obj_property name="label">fsm</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/val_out">
+            <obj_property name="ElementShortName">val_out</obj_property>
+            <obj_property name="ObjectShortName">val_out</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/current_state">
+            <obj_property name="ElementShortName">current_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">current_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/next_state">
+            <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/n">
+            <obj_property name="ElementShortName">n[2:0]</obj_property>
+            <obj_property name="ObjectShortName">n[2:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/n_max">
+            <obj_property name="ElementShortName">n_max</obj_property>
+            <obj_property name="ObjectShortName">n_max</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/inp_vals">
+            <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
+            <obj_property name="ObjectShortName">inp_vals[2:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/out_vals">
+            <obj_property name="ElementShortName">out_vals[1:0]</obj_property>
+            <obj_property name="ObjectShortName">out_vals[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf_fsm/twiddle_rom">
+            <obj_property name="ElementShortName">twiddle_rom[0:255][35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle_rom[0:255][35:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group68">
+         <obj_property name="label">reg</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/shift_reg/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/shift_reg/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/shift_reg/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/shift_reg/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/shift_reg/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/shift_reg/reg_array">
+            <obj_property name="ElementShortName">reg_array[3:0][53:0]</obj_property>
+            <obj_property name="ObjectShortName">reg_array[3:0][53:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/shift_reg/REG_SIZE">
+            <obj_property name="ElementShortName">REG_SIZE[31:0]</obj_property>
+            <obj_property name="ObjectShortName">REG_SIZE[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group69">
+         <obj_property name="label">bf</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf/data_in">
+            <obj_property name="ElementShortName">data_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/bf/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf/data_out">
+            <obj_property name="ElementShortName">data_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf7/bf/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/bf/SHIFT_SUM_EN">
+            <obj_property name="ElementShortName">SHIFT_SUM_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_SUM_EN</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf7/bf/SHIFT_DIFF_EN">
+            <obj_property name="ElementShortName">SHIFT_DIFF_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_DIFF_EN</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66">
+      <obj_property name="label">sdf8</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="group" fp_name="group67">
+         <obj_property name="label">fsm</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/val_out">
+            <obj_property name="ElementShortName">val_out</obj_property>
+            <obj_property name="ObjectShortName">val_out</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/current_state">
+            <obj_property name="ElementShortName">current_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">current_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/next_state">
+            <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/n">
+            <obj_property name="ElementShortName">n[1:0]</obj_property>
+            <obj_property name="ObjectShortName">n[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/n_max">
+            <obj_property name="ElementShortName">n_max</obj_property>
+            <obj_property name="ObjectShortName">n_max</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/inp_vals">
+            <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
+            <obj_property name="ObjectShortName">inp_vals[2:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/out_vals">
+            <obj_property name="ElementShortName">out_vals[1:0]</obj_property>
+            <obj_property name="ObjectShortName">out_vals[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf_fsm/twiddle_rom">
+            <obj_property name="ElementShortName">twiddle_rom[0:255][35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle_rom[0:255][35:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group68">
+         <obj_property name="label">reg</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/shift_reg/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf8/shift_reg/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf8/shift_reg/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf8/shift_reg/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/shift_reg/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/shift_reg/reg_array">
+            <obj_property name="ElementShortName">reg_array[1:0][53:0]</obj_property>
+            <obj_property name="ObjectShortName">reg_array[1:0][53:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/shift_reg/REG_SIZE">
+            <obj_property name="ElementShortName">REG_SIZE[31:0]</obj_property>
+            <obj_property name="ObjectShortName">REG_SIZE[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group69">
+         <obj_property name="label">bf</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf/data_in">
+            <obj_property name="ElementShortName">data_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf8/bf/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf/data_out">
+            <obj_property name="ElementShortName">data_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf8/bf/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf8/bf/SHIFT_SUM_EN">
+            <obj_property name="ElementShortName">SHIFT_SUM_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_SUM_EN</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf8/bf/SHIFT_DIFF_EN">
+            <obj_property name="ElementShortName">SHIFT_DIFF_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_DIFF_EN</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66">
+      <obj_property name="label">sdf9</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="group" fp_name="group67">
+         <obj_property name="label">fsm</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/val_out">
+            <obj_property name="ElementShortName">val_out</obj_property>
+            <obj_property name="ObjectShortName">val_out</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/current_state">
+            <obj_property name="ElementShortName">current_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">current_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/next_state">
+            <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+            <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/n">
+            <obj_property name="ElementShortName">n[0:0]</obj_property>
+            <obj_property name="ObjectShortName">n[0:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/n_max">
+            <obj_property name="ElementShortName">n_max</obj_property>
+            <obj_property name="ObjectShortName">n_max</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/counter">
+            <obj_property name="ElementShortName">counter[8:0]</obj_property>
+            <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/frame_done">
+            <obj_property name="ElementShortName">frame_done</obj_property>
+            <obj_property name="ObjectShortName">frame_done</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/inp_vals">
+            <obj_property name="ElementShortName">inp_vals[2:0]</obj_property>
+            <obj_property name="ObjectShortName">inp_vals[2:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/out_vals">
+            <obj_property name="ElementShortName">out_vals[1:0]</obj_property>
+            <obj_property name="ObjectShortName">out_vals[1:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf_fsm/twiddle_rom">
+            <obj_property name="ElementShortName">twiddle_rom[0:255][35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle_rom[0:255][35:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group68">
+         <obj_property name="label">reg</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/shift_reg/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/shift_reg/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/shift_reg/rst">
+            <obj_property name="ElementShortName">rst</obj_property>
+            <obj_property name="ObjectShortName">rst</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/shift_reg/val_in">
+            <obj_property name="ElementShortName">val_in</obj_property>
+            <obj_property name="ObjectShortName">val_in</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/shift_reg/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/shift_reg/reg_array">
+            <obj_property name="ElementShortName">reg_array[0:0][53:0]</obj_property>
+            <obj_property name="ObjectShortName">reg_array[0:0][53:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/shift_reg/REG_SIZE">
+            <obj_property name="ElementShortName">REG_SIZE[31:0]</obj_property>
+            <obj_property name="ObjectShortName">REG_SIZE[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group69">
+         <obj_property name="label">bf</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf/data_in">
+            <obj_property name="ElementShortName">data_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf/delay_out">
+            <obj_property name="ElementShortName">delay_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf/twiddle">
+            <obj_property name="ElementShortName">twiddle[35:0]</obj_property>
+            <obj_property name="ObjectShortName">twiddle[35:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/bf/bf_on">
+            <obj_property name="ElementShortName">bf_on</obj_property>
+            <obj_property name="ObjectShortName">bf_on</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf/data_out">
+            <obj_property name="ElementShortName">data_out[53:0]</obj_property>
+            <obj_property name="ObjectShortName">data_out[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/tb_FFT512/dut/sdf9/bf/delay_in">
+            <obj_property name="ElementShortName">delay_in[53:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[53:0]</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/bf/SHIFT_SUM_EN">
+            <obj_property name="ElementShortName">SHIFT_SUM_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_SUM_EN</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/tb_FFT512/dut/sdf9/bf/SHIFT_DIFF_EN">
+            <obj_property name="ElementShortName">SHIFT_DIFF_EN</obj_property>
+            <obj_property name="ObjectShortName">SHIFT_DIFF_EN</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>

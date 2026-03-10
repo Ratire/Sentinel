@@ -37,6 +37,11 @@
 *.hw
 *.ip_user_files
 
+
+#------------------------
+# Vivado Files
+#------------------------
+
 ### IP synth
 *_synth_*
 
@@ -103,6 +108,52 @@
 */*/*/bd/*/ip/*/*.tcl
 hw_handoff
 ipshared
+
+#------------------------
+# Vitis Workspace & BSP Build Artifacts
+#------------------------
+
+# Vitis workspace directories (contains generated IDE files, BSPs, build artifacts)
+vitis_workspace/
+build/vitis_workspace/
+**/_ide/
+**/.peers.ini
+**/.vitisPlatformRepo.json
+**/workspace_journal*.py
+
+# BSP Build Configurations (contains compiled objects, CMake cache, ninja logs)
+**/build_configs/
+**/.ninja_log
+**/.ninja_deps
+**/build.ninja
+**/CMakeCache.txt
+**/CMakeFiles/
+**/cmake_install.cmake
+**/compile_commands.json
+**/.clangd
+
+# Compiled Libraries & Objects (Vitis BSP generates these)
+*.a        # Static libraries (libxil.a, libaxidma.a, etc.)
+*.obj      # Object files (BSP compilation)
+*.elf      # ARM executables (fsbl.elf, application.elf)
+*.elf.size
+*.mri      # GNU archiver scripts
+
+# Hardware Specification Artifacts (generated from XSA import)
+*.xsa
+*.dts
+*.dtsi
+**/hw/sdt/
+**/hw_artifacts/
+**/zynqmp_fsbl/           # First Stage Bootloader (generated)
+**/psu_cortexa53_*/       # BSP directories for A53 cores
+**/standalone_psu_*/      # Standalone BSP directories
+
+# Application metadata (regenerated on import)
+**/vitis-comp.json
+**/app.yaml
+**/bsp.yaml
+**/lscript.ld             # Linker script (generated from XSA)
 
 #------------------------
 # User Additions (by me)

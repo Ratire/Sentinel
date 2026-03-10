@@ -172,8 +172,8 @@ Senti/
 
 ## Dependencies
 
-- AMD Vivado Design Suite 2023.2
-- AMD Vitis Unified IDE 2023.2
+- AMD Vivado Design Suite 2025.2
+- AMD Vitis Unified IDE 2025.2
 - Python 3.8+ (NumPy for golden models)
 - AMD Kria KV260 Starter Kit
 

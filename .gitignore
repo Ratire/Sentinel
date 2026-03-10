@@ -109,19 +109,27 @@
 hw_handoff
 ipshared
 
+# Ignore Vivado project files in build directory only
+build/**/*.xpr
+build/**/*.cache/
+build/**/*.hw/
+build/**/*.ip_user_files/
+
 #------------------------
 # Vitis Workspace & BSP Build Artifacts
 #------------------------
 
-# Vitis workspace directories (contains generated IDE files, BSPs, build artifacts)
-vitis_workspace/
-build/vitis_workspace/
+# Ignore CONTENTS of vitis_workspace but allow directory traversal for whitelisting
+build/vitis_workspace/**/*
+
+# IDE session files
 **/_ide/
 **/.peers.ini
 **/.vitisPlatformRepo.json
 **/workspace_journal*.py
+**/logs/
 
-# BSP Build Configurations (contains compiled objects, CMake cache, ninja logs)
+# BSP Build Configurations
 **/build_configs/
 **/.ninja_log
 **/.ninja_deps
@@ -132,28 +140,49 @@ build/vitis_workspace/
 **/compile_commands.json
 **/.clangd
 
-# Compiled Libraries & Objects (Vitis BSP generates these)
-*.a        # Static libraries (libxil.a, libaxidma.a, etc.)
-*.obj      # Object files (BSP compilation)
-*.elf      # ARM executables (fsbl.elf, application.elf)
+# Compiled Libraries & Objects
+*.a
+*.obj
+*.elf
 *.elf.size
-*.mri      # GNU archiver scripts
+*.mri
 
-# Hardware Specification Artifacts (generated from XSA import)
-*.xsa
+# Hardware Specification Artifacts (general)
 *.dts
 *.dtsi
 **/hw/sdt/
 **/hw_artifacts/
-**/zynqmp_fsbl/           # First Stage Bootloader (generated)
-**/psu_cortexa53_*/       # BSP directories for A53 cores
-**/standalone_psu_*/      # Standalone BSP directories
+**/zynqmp_fsbl/
+**/psu_cortexa53_*/
+**/standalone_psu_*/
 
-# Application metadata (regenerated on import)
+# Application metadata
 **/vitis-comp.json
 **/app.yaml
 **/bsp.yaml
-**/lscript.ld             # Linker script (generated from XSA)
+
+#------------------------
+# Whitelist: Keep Actual Source Code
+#------------------------
+
+# Your C application source (must come AFTER the /**/* ignore above)
+!build/vitis_workspace/fft_test_app/src/
+!build/vitis_workspace/fft_test_app/src/main.c
+!build/vitis_workspace/fft_test_app/src/golden_vectors.h
+
+# Hardware Specification (needed to recreate platform)
+!build/hw_handoff/
+!build/hw_handoff/*.xsa
+
+# Keep ignoring generated files even in whitelisted src/
+build/vitis_workspace/fft_test_app/src/*.json
+build/vitis_workspace/fft_test_app/src/*.ld
+build/vitis_workspace/fft_test_app/src/CMakeLists.txt
+build/vitis_workspace/fft_test_app/src/*.cmake
+build/vitis_workspace/fft_test_app/src/*.yaml
+build/vitis_workspace/fft_test_app/src/README.txt
+build/vitis_workspace/fft_test_app/src/UserConfig.cmake
+build/vitis_workspace/fft_test_app/src/Empty_applicationExample.cmake
 
 #------------------------
 # User Additions (by me)

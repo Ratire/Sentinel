@@ -1,8 +1,8 @@
 """
 This python golden model starts with a 18-bit input of the form signed Q1.17 (same as how it would be for any input into the 512-point 
 FFT). It then goes on to create the 27-bit output of the form signed Q10.17 (once again same as the 512-point FFT output). We
-accomplish this behavior by converting the initial value to a floating point value, then computing the FFT in floating point and 
-quantizing the result back to 27‑bit Q10.17.
+accomplish this behavior by converting the initial value to a floating point value, then computing the FFT in floating point - by
+following the same procedure as the RTL code for the FFT - and quantizing the result back to 27‑bit Q10.17.
 """
 import numpy as np
 import re

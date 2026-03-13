@@ -114,6 +114,8 @@ build/**/*.xpr
 build/**/*.cache/
 build/**/*.hw/
 build/**/*.ip_user_files/
+build/**/**/*.srcs/**/**/**
+
 
 #------------------------
 # Vitis Workspace & BSP Build Artifacts

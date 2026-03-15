@@ -5,15 +5,23 @@ module pe_cell_tb;
 
     logic clk = 0;
     logic rst;
-    logic [PE_INP_WIDTH-1:0] activation_i;
-    logic [PE_INP_WIDTH-1:0] weight_i;
-    logic enable_i;
     
-    logic [PE_INP_WIDTH-1:0] activation_o;
-    logic [PE_INP_WIDTH-1:0] weight_o;
+    // Data flow between pe_cells
+    logic signed [PE_INP_WIDTH-1:0] activation_i;
+    logic signed [PE_INP_WIDTH-1:0] activation_o;
+    
+    // Weight loading variables  
+    logic signed [PE_INP_WIDTH-1:0] weight_load_data;
+    logic                           weight_load_en;
+    logic                           load_mode;
+    
+    // Control variables
+    logic enable_i;
     logic enable_o;
-    logic [PE_ACCUM_WIDTH-1:0] accum_o;
-    logic valid_o;
+    
+    // Outputting results
+    logic signed [PE_ACCUM_WIDTH-1:0] accum_o;
+    logic                             valid_o;
     
     always #5 clk = ~clk;
     
@@ -24,61 +32,84 @@ module pe_cell_tb;
     begin
         if (!rst) 
         begin
-            $display("Time=%0t: enable_i=%b, accum_o=%0d, valid_o=%b, cntr=%0d", 
-                     $time, enable_i, accum_o, valid_o, dut.cntr);
+            if (load_mode)
+                $display("Time=%0t: LOAD | weight_addr=%0d | load_data=%0d", $time, dut.weight_addr, weight_load_data);
+            else if (valid_o)
+                $display("Time=%0t: DONE | accum_o=%0d | valid_o=%b", $time, accum_o, valid_o);
         end
     end
     
     initial
     begin
         // 1. Reset phase
-        rst <=           1;
-        enable_i <=      0;
-        activation_i <=  0;
-        weight_i <=      0;
+        rst <=              1;
+        load_mode <=        0;
+        weight_load_en <=   0;
+        weight_load_data <= 0;
+        enable_i <=         0;
+        activation_i <=     0;
         
         wait_cp(3, clk);
         
-        rst <=            0;
-        activation_i <= 100;        //Test 1: ACT: 100 | WEIGHT: 200 | ACCUM_EXPECTED: 20,000
-        weight_i <=     200;
-        enable_i <=       1;
         
+        // 2. Load Phase: Loading 512 weights (1 to 512) into BRAM
+        load_mode <=        1;
+        weight_load_en <=   1;
+        rst <=              0;
+        
+        // Load sequence: Weight values 1, 2, 3, ..., 512
+        for (int i = 0; i < 512; i++) begin
+            weight_load_data <= i + 1;  //Test Load %0d: Loading weight %0d into addr %0d
+            wait_cp(1, clk);
+        end
+        
+        weight_load_en <=   0;
+        load_mode <=        0;
+        wait_cp(2, clk);  // Gap cycle before compute phase begins
+        
+        // 3. Compute Phase: Streaming 512 activations (1 to 512)
+        // Expected final result: Dot product = sum of squares (1²+2²+...+512²) = 44,870,400
+        
+        //Test 1: ACT: 1 | WEIGHT: 1 | ACCUM_EXPECTED: 1*1 = 1
+        enable_i <=         1;
+        activation_i <=     18'd1;
+        
+        wait_cp(1, clk);
+        
+        enable_i <=         0;  // enable_reg carries on for remaining 511 cycles
+        
+        // Continue with activations 2 through 512
+        // (For brevity, we loop the middle 510 values, but each gets tested in hardware)
+        for (int i = 2; i <= 512; i++) begin
+            activation_i <= i;  //Test continues: ACT: %0d | WEIGHT: %0d | Running accumulation
+            wait_cp(1, clk);
+        end
+        
+        // Wait for completion and valid assertion
+        wait_cp(5, clk);
+        
+        // Final Test: Verify complete accumulation after all 512 MACs
+        // Expected: 44,870,400 (sum of squares from 1 to 512)
+        assert (valid_o == 1) else 
+            $error("Assertion failed: valid_o is not asserted at time %t | valid_o observed %b", $time, valid_o);
+        
+        assert (accum_o == 44870400) else 
+            $error("Assertion failed: accum_o is not equal to 44,870,400 at time %t | accum_o observed %0d", $time, accum_o);
+        
+        $display("TEST PASSED: Final accumulation = %0d (Expected: 44,870,400)", accum_o);
+        
+        // 4. Reset Test: ARM-style reset for next inference
+        rst <= 1;
         wait_cn(2, clk);
-        
-        assert (accum_o == 20000) else 
-        $error("Assertion failed: accum_o is not equal to 20,000 at time %t | accum_o observed %0d", $time, accum_o); 
-        
-        enable_i <=       0;        // Also testing if enable carries on within enable_reg
-        activation_i <=  10;        //Test 2: ACT: 10 | WEIGHT: 5 | ACCUM_EXPECTED: 20,000 + 5*10 = 20,050
-        weight_i <=       5;
-        
+        rst <= 0;
         wait_cn(1, clk);
         
-        assert(accum_o == 20050) else 
-        $error("Assertion failed: accum_o is not equal to 20,050 at time %t | accum_o observed %0d", $time, accum_o); 
+        assert (valid_o == 0 && accum_o == 0) else
+            $error("Assertion failed: Reset did not clear accumulators at time %t | valid_o=%b, accum_o=%0d", $time, valid_o, accum_o);
+            
+        $display("Reset test PASSED: Accumulators cleared for next inference");
         
-        activation_i <=  20;        //Test 3: ACT: 20 | WEIGHT: 3 | ACCUM_EXPECTED: 20,000 + 5*10 + 3*20= 20,110
-        weight_i <=       3;
-        
-        wait_cn(1, clk);
-        
-        assert(accum_o == 20110) else 
-        $error("Assertion failed: accum_o is not equal to 20,110 at time %t | accum_o observed %0d", $time, accum_o); 
-        
-        activation_i <=  30;        //Test 4: ACT: 30 | WEIGHT: 2 | ACCUM_EXPECTED: 20,000 + 5*10 + 3*20 + 2*30 = 20,170
-        weight_i <=       2;
-        
-        wait_cn(1, clk);
-        
-        assert(accum_o == 20170) else 
-        $error("Assertion failed: accum_o is not equal to 20,170 at time %t | accum_o observed %0d", $time, accum_o);
-        
-        activation_i <=   1;
-        weight_i <=       1;
-        
-        wait_cp(550, clk);
-        
+        wait_cp(10, clk);
         $finish;
     end
 

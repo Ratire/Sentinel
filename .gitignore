@@ -37,6 +37,11 @@
 *.hw
 *.ip_user_files
 
+
+#------------------------
+# Vivado Files
+#------------------------
+
 ### IP synth
 *_synth_*
 
@@ -103,6 +108,120 @@
 */*/*/bd/*/ip/*/*.tcl
 hw_handoff
 ipshared
+
+# Ignore Vivado project files in build directory only
+build/**/*.xpr
+build/**/*.cache/
+build/**/*.hw/
+build/**/*.ip_user_files/
+build/**/**/*.srcs/**/**/**
+
+#------------------------
+# Fix Paths for Your Project Structure
+#------------------------
+# Your current gitignore uses 'build/vivado_project/' (singular)
+# but your actual path is 'build/vivado_projects/' (plural + project subdir)
+
+# Ignore all generated directories under specific project folders
+build/vivado_projects/*/*.gen/
+build/vivado_projects/*/*.cache/
+build/vivado_projects/*/*.hw/
+build/vivado_projects/*/*.ip_user_files/
+build/vivado_projects/*/*.runs/
+build/vivado_projects/*/*.sim/
+build/vivado_projects/*/*.tmp/
+
+# Ignore waveform configs (user-specific IDE settings)
+*.wcfg
+
+# Ignore generated reports and schematics (can be regenerated)
+build/vivado_projects/*/reports/
+
+# Ignore bitstreams (store in GitHub Releases if needed for demo)
+build/vivado_projects/*/*.runs/impl*/*.bit
+build/vivado_projects/*/*.runs/impl*/*.bin
+
+#------------------------
+# Whitelist: Keep Vivado Project Sources
+#------------------------
+# IMPORTANT: You need these to recreate the project later
+!build/vivado_projects/*/*.srcs/
+!build/vivado_projects/*/*.xpr
+!build/vivado_projects/*/*.bd
+
+# Keep the hw_handoff for Vitis (you already have this, but ensure it works)
+!build/hw_handoff/
+!build/hw_handoff/*.xsa
+
+
+#------------------------
+# Vitis Workspace & BSP Build Artifacts
+#------------------------
+
+# Ignore CONTENTS of vitis_workspace but allow directory traversal for whitelisting
+build/vitis_workspace/**/*
+
+# IDE session files
+**/_ide/
+**/.peers.ini
+**/.vitisPlatformRepo.json
+**/workspace_journal*.py
+**/logs/
+
+# BSP Build Configurations
+**/build_configs/
+**/.ninja_log
+**/.ninja_deps
+**/build.ninja
+**/CMakeCache.txt
+**/CMakeFiles/
+**/cmake_install.cmake
+**/compile_commands.json
+**/.clangd
+
+# Compiled Libraries & Objects
+*.a
+*.obj
+*.elf
+*.elf.size
+*.mri
+
+# Hardware Specification Artifacts (general)
+*.dts
+*.dtsi
+**/hw/sdt/
+**/hw_artifacts/
+**/zynqmp_fsbl/
+**/psu_cortexa53_*/
+**/standalone_psu_*/
+
+# Application metadata
+**/vitis-comp.json
+**/app.yaml
+**/bsp.yaml
+
+#------------------------
+# Whitelist: Keep Actual Source Code
+#------------------------
+
+# Your C application source (must come AFTER the /**/* ignore above)
+!build/vitis_workspace/fft_test_app/src/
+!build/vitis_workspace/fft_test_app/src/main.c
+!build/vitis_workspace/fft_test_app/src/golden_vectors.h
+
+# Hardware Specification (needed to recreate platform)
+!build/hw_handoff/
+!build/hw_handoff/*.xsa
+
+# Keep ignoring generated files even in whitelisted src/
+build/vitis_workspace/fft_test_app/src/*.json
+build/vitis_workspace/fft_test_app/src/*.ld
+build/vitis_workspace/fft_test_app/src/CMakeLists.txt
+build/vitis_workspace/fft_test_app/src/*.cmake
+build/vitis_workspace/fft_test_app/src/*.yaml
+build/vitis_workspace/fft_test_app/src/README.txt
+build/vitis_workspace/fft_test_app/src/UserConfig.cmake
+build/vitis_workspace/fft_test_app/src/Empty_applicationExample.cmake
 
 #------------------------
 # User Additions (by me)

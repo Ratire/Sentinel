@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="feature_extractor_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="feature_extractor_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="10,262.386 ns"></ZoomStartTime>
+      <ZoomEndTime time="10,312.237 ns"></ZoomEndTime>
+      <Cursor1Time time="10,285.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="210"></NameColumnWidth>
+      <ValueColumnWidth column_width="61"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="21" />
+   <wvobject type="logic" fp_name="/feature_extractor_tb/dut/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/feature_extractor_tb/dut/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/feature_extractor_tb/dut/fft_valout">
+      <obj_property name="ElementShortName">fft_valout</obj_property>
+      <obj_property name="ObjectShortName">fft_valout</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/feature_extractor_tb/dut/fft_data_out">
+      <obj_property name="ElementShortName">fft_data_out[53:0]</obj_property>
+      <obj_property name="ObjectShortName">fft_data_out[53:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/feature_extractor_tb/dut/arm_start">
+      <obj_property name="ElementShortName">arm_start</obj_property>
+      <obj_property name="ObjectShortName">arm_start</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/feature_extractor_tb/dut/frame_done">
+      <obj_property name="ElementShortName">frame_done</obj_property>
+      <obj_property name="ObjectShortName">frame_done</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/feature_extractor_tb/dut/sa_activation_data">
+      <obj_property name="ElementShortName">sa_activation_data[17:0]</obj_property>
+      <obj_property name="ObjectShortName">sa_activation_data[17:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/feature_extractor_tb/dut/sa_activation_valid">
+      <obj_property name="ElementShortName">sa_activation_valid</obj_property>
+      <obj_property name="ObjectShortName">sa_activation_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/feature_extractor_tb/dut/sample_cnt">
+      <obj_property name="ElementShortName">sample_cnt[9:0]</obj_property>
+      <obj_property name="ObjectShortName">sample_cnt[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/feature_extractor_tb/dut/collecting_active">
+      <obj_property name="ElementShortName">collecting_active</obj_property>
+      <obj_property name="ObjectShortName">collecting_active</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/feature_extractor_tb/dut/broadcasting_active">
+      <obj_property name="ElementShortName">broadcasting_active</obj_property>
+      <obj_property name="ObjectShortName">broadcasting_active</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/feature_extractor_tb/dut/current_state">
+      <obj_property name="ElementShortName">current_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">current_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/feature_extractor_tb/dut/next_state">
+      <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/feature_extractor_tb/dut/sample_buffer">
+      <obj_property name="ElementShortName">sample_buffer[0:511][17:0]</obj_property>
+      <obj_property name="ObjectShortName">sample_buffer[0:511][17:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/feature_extractor_tb/dut/wr_ptr">
+      <obj_property name="ElementShortName">wr_ptr[8:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_ptr[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/feature_extractor_tb/dut/rd_ptr">
+      <obj_property name="ElementShortName">rd_ptr[8:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_ptr[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/feature_extractor_tb/dut/real_part">
+      <obj_property name="ElementShortName">real_part[26:0]</obj_property>
+      <obj_property name="ObjectShortName">real_part[26:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/feature_extractor_tb/dut/imag_part">
+      <obj_property name="ElementShortName">imag_part[26:0]</obj_property>
+      <obj_property name="ObjectShortName">imag_part[26:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/feature_extractor_tb/dut/abs_sum">
+      <obj_property name="ElementShortName">abs_sum[27:0]</obj_property>
+      <obj_property name="ObjectShortName">abs_sum[27:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/feature_extractor_tb/dut/activation_val">
+      <obj_property name="ElementShortName">activation_val[17:0]</obj_property>
+      <obj_property name="ObjectShortName">activation_val[17:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/feature_extractor_tb/dut/sa_ready">
+      <obj_property name="ElementShortName">sa_ready</obj_property>
+      <obj_property name="ObjectShortName">sa_ready</obj_property>
+   </wvobject>
+</wave_config>

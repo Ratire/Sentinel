@@ -70,13 +70,8 @@ module pe_cell_tb;
         // 3. Compute Phase: Streaming 512 activations (1 to 512)
         // Expected final result: Dot product = sum of squares (1²+2²+...+512²) = 44,870,400
         
-        // Dummy cycle: Loads weight[0] into registered output, multiplied by 0
-        enable_i <=         1;
-        activation_i <=     18'd0;  // DUMMY - adds 0 to final sum
-        
-        wait_cp(1, clk);
-        
         //Test 1: ACT: 1 | WEIGHT: 1 | ACCUM_EXPECTED: 1*1 = 1
+        enable_i <=         1;
         activation_i <=     18'd1;
         
         wait_cp(1, clk);
@@ -85,7 +80,7 @@ module pe_cell_tb;
         
         // Continue with activations 2 through 512
         // (For brevity, we loop the middle 510 values, but each gets tested in hardware)
-        for (int i = 2; i <= 513; i++) begin
+        for (int i = 2; i <= 512; i++) begin
             activation_i <= i;  //Test continues: ACT: %0d | WEIGHT: %0d | Running accumulation
             wait_cp(1, clk);
         end

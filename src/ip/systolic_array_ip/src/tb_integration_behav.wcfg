@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_integration_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_integration" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1,310,735.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,310,818.151 ns"></ZoomEndTime>
+      <Cursor1Time time="1,310,775.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="182"></NameColumnWidth>
+      <ValueColumnWidth column_width="61"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="4" />
+   <wvobject type="group" fp_name="group6873">
+      <obj_property name="label">feature_extractor</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_integration/fe/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/fe/rst">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/fe/fft_valout">
+         <obj_property name="ElementShortName">fft_valout</obj_property>
+         <obj_property name="ObjectShortName">fft_valout</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/fe/fft_data_out">
+         <obj_property name="ElementShortName">fft_data_out[53:0]</obj_property>
+         <obj_property name="ObjectShortName">fft_data_out[53:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/fe/arm_start">
+         <obj_property name="ElementShortName">arm_start</obj_property>
+         <obj_property name="ObjectShortName">arm_start</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/fe/frame_done">
+         <obj_property name="ElementShortName">frame_done</obj_property>
+         <obj_property name="ObjectShortName">frame_done</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/fe/sa_activation_data">
+         <obj_property name="ElementShortName">sa_activation_data[17:0]</obj_property>
+         <obj_property name="ObjectShortName">sa_activation_data[17:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/fe/sa_activation_valid">
+         <obj_property name="ElementShortName">sa_activation_valid</obj_property>
+         <obj_property name="ObjectShortName">sa_activation_valid</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/fe/sample_cnt">
+         <obj_property name="ElementShortName">sample_cnt[9:0]</obj_property>
+         <obj_property name="ObjectShortName">sample_cnt[9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/fe/collecting_active">
+         <obj_property name="ElementShortName">collecting_active</obj_property>
+         <obj_property name="ObjectShortName">collecting_active</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/fe/broadcasting_active">
+         <obj_property name="ElementShortName">broadcasting_active</obj_property>
+         <obj_property name="ObjectShortName">broadcasting_active</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/fe/current_state">
+         <obj_property name="ElementShortName">current_state[1:0]</obj_property>
+         <obj_property name="ObjectShortName">current_state[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/fe/next_state">
+         <obj_property name="ElementShortName">next_state[1:0]</obj_property>
+         <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/fe/sample_buffer">
+         <obj_property name="ElementShortName">sample_buffer[0:511][17:0]</obj_property>
+         <obj_property name="ObjectShortName">sample_buffer[0:511][17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/fe/wr_ptr">
+         <obj_property name="ElementShortName">wr_ptr[8:0]</obj_property>
+         <obj_property name="ObjectShortName">wr_ptr[8:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/fe/rd_ptr">
+         <obj_property name="ElementShortName">rd_ptr[8:0]</obj_property>
+         <obj_property name="ObjectShortName">rd_ptr[8:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/fe/real_part">
+         <obj_property name="ElementShortName">real_part[26:0]</obj_property>
+         <obj_property name="ObjectShortName">real_part[26:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/fe/imag_part">
+         <obj_property name="ElementShortName">imag_part[26:0]</obj_property>
+         <obj_property name="ObjectShortName">imag_part[26:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/fe/abs_sum">
+         <obj_property name="ElementShortName">abs_sum[27:0]</obj_property>
+         <obj_property name="ObjectShortName">abs_sum[27:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/fe/activation_val">
+         <obj_property name="ElementShortName">activation_val[17:0]</obj_property>
+         <obj_property name="ObjectShortName">activation_val[17:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/fe/sa_ready">
+         <obj_property name="ElementShortName">sa_ready</obj_property>
+         <obj_property name="ObjectShortName">sa_ready</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group6874">
+      <obj_property name="label">systolic_array</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_integration/sa/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/rst">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/left_activation_i">
+         <obj_property name="ElementShortName">left_activation_i[15:0][17:0]</obj_property>
+         <obj_property name="ObjectShortName">left_activation_i[15:0][17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/left_enable_i">
+         <obj_property name="ElementShortName">left_enable_i[15:0]</obj_property>
+         <obj_property name="ObjectShortName">left_enable_i[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/weight_load_data">
+         <obj_property name="ElementShortName">weight_load_data[17:0]</obj_property>
+         <obj_property name="ObjectShortName">weight_load_data[17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/weight_load_row">
+         <obj_property name="ElementShortName">weight_load_row[3:0]</obj_property>
+         <obj_property name="ObjectShortName">weight_load_row[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/weight_load_col">
+         <obj_property name="ElementShortName">weight_load_col[3:0]</obj_property>
+         <obj_property name="ObjectShortName">weight_load_col[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/weight_load_en">
+         <obj_property name="ElementShortName">weight_load_en</obj_property>
+         <obj_property name="ObjectShortName">weight_load_en</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/load_mode">
+         <obj_property name="ElementShortName">load_mode</obj_property>
+         <obj_property name="ObjectShortName">load_mode</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/result_addr_i">
+         <obj_property name="ElementShortName">result_addr_i[7:0]</obj_property>
+         <obj_property name="ObjectShortName">result_addr_i[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/result_o">
+         <obj_property name="ElementShortName">result_o[44:0]</obj_property>
+         <obj_property name="ObjectShortName">result_o[44:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/done_o">
+         <obj_property name="ElementShortName">done_o</obj_property>
+         <obj_property name="ObjectShortName">done_o</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/act_mesh">
+         <obj_property name="ElementShortName">act_mesh[15:0][16:0][17:0]</obj_property>
+         <obj_property name="ObjectShortName">act_mesh[15:0][16:0][17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/enable_mesh">
+         <obj_property name="ElementShortName">enable_mesh[15:0][16:0]</obj_property>
+         <obj_property name="ObjectShortName">enable_mesh[15:0][16:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/pe_valid">
+         <obj_property name="ElementShortName">pe_valid[15:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">pe_valid[15:0][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/pe_accum">
+         <obj_property name="ElementShortName">pe_accum[0:15][0:15][44:0]</obj_property>
+         <obj_property name="ObjectShortName">pe_accum[0:15][0:15][44:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/results_flat">
+         <obj_property name="ElementShortName">results_flat[0:255][44:0]</obj_property>
+         <obj_property name="ObjectShortName">results_flat[0:255][44:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/K">
+         <obj_property name="ElementShortName">K[31:0]</obj_property>
+         <obj_property name="ObjectShortName">K[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/PE_INP_WIDTH">
+         <obj_property name="ElementShortName">PE_INP_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PE_INP_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/PE_ACCUM_WIDTH">
+         <obj_property name="ElementShortName">PE_ACCUM_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PE_ACCUM_WIDTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/SIDE_LENGTH">
+         <obj_property name="ElementShortName">SIDE_LENGTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">SIDE_LENGTH[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group8415">
+      <obj_property name="label">pe_row15_col15</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /rst">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /activation_i">
+         <obj_property name="ElementShortName">activation_i[17:0]</obj_property>
+         <obj_property name="ObjectShortName">activation_i[17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /activation_o">
+         <obj_property name="ElementShortName">activation_o[17:0]</obj_property>
+         <obj_property name="ObjectShortName">activation_o[17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /weight_load_data">
+         <obj_property name="ElementShortName">weight_load_data[17:0]</obj_property>
+         <obj_property name="ObjectShortName">weight_load_data[17:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /weight_load_en">
+         <obj_property name="ElementShortName">weight_load_en</obj_property>
+         <obj_property name="ObjectShortName">weight_load_en</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /load_mode">
+         <obj_property name="ElementShortName">load_mode</obj_property>
+         <obj_property name="ObjectShortName">load_mode</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /enable_i">
+         <obj_property name="ElementShortName">enable_i</obj_property>
+         <obj_property name="ObjectShortName">enable_i</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /enable_o">
+         <obj_property name="ElementShortName">enable_o</obj_property>
+         <obj_property name="ObjectShortName">enable_o</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /accum_o">
+         <obj_property name="ElementShortName">accum_o[44:0]</obj_property>
+         <obj_property name="ObjectShortName">accum_o[44:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /valid_o">
+         <obj_property name="ElementShortName">valid_o</obj_property>
+         <obj_property name="ObjectShortName">valid_o</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /valid_reg">
+         <obj_property name="ElementShortName">valid_reg</obj_property>
+         <obj_property name="ObjectShortName">valid_reg</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /enable_reg">
+         <obj_property name="ElementShortName">enable_reg</obj_property>
+         <obj_property name="ObjectShortName">enable_reg</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /activation_reg">
+         <obj_property name="ElementShortName">activation_reg[17:0]</obj_property>
+         <obj_property name="ObjectShortName">activation_reg[17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /accum_reg">
+         <obj_property name="ElementShortName">accum_reg[44:0]</obj_property>
+         <obj_property name="ObjectShortName">accum_reg[44:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /weight_mem">
+         <obj_property name="ElementShortName">weight_mem[0:511][17:0]</obj_property>
+         <obj_property name="ObjectShortName">weight_mem[0:511][17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /weight_addr">
+         <obj_property name="ElementShortName">weight_addr[8:0]</obj_property>
+         <obj_property name="ObjectShortName">weight_addr[8:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /compute_addr">
+         <obj_property name="ElementShortName">compute_addr[8:0]</obj_property>
+         <obj_property name="ObjectShortName">compute_addr[8:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /done_flag">
+         <obj_property name="ElementShortName">done_flag</obj_property>
+         <obj_property name="ObjectShortName">done_flag</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /row">
+         <obj_property name="ElementShortName">row[31:0]</obj_property>
+         <obj_property name="ObjectShortName">row[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /column">
+         <obj_property name="ElementShortName">column[31:0]</obj_property>
+         <obj_property name="ObjectShortName">column[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[15].gen_col[15].pe_inst /K">
+         <obj_property name="ElementShortName">K[31:0]</obj_property>
+         <obj_property name="ObjectShortName">K[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group12978">
+      <obj_property name="label">pe_row0_col_0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /rst">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /activation_i">
+         <obj_property name="ElementShortName">activation_i[17:0]</obj_property>
+         <obj_property name="ObjectShortName">activation_i[17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /activation_o">
+         <obj_property name="ElementShortName">activation_o[17:0]</obj_property>
+         <obj_property name="ObjectShortName">activation_o[17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /weight_load_data">
+         <obj_property name="ElementShortName">weight_load_data[17:0]</obj_property>
+         <obj_property name="ObjectShortName">weight_load_data[17:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /weight_load_en">
+         <obj_property name="ElementShortName">weight_load_en</obj_property>
+         <obj_property name="ObjectShortName">weight_load_en</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /load_mode">
+         <obj_property name="ElementShortName">load_mode</obj_property>
+         <obj_property name="ObjectShortName">load_mode</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /enable_i">
+         <obj_property name="ElementShortName">enable_i</obj_property>
+         <obj_property name="ObjectShortName">enable_i</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /enable_o">
+         <obj_property name="ElementShortName">enable_o</obj_property>
+         <obj_property name="ObjectShortName">enable_o</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /accum_o">
+         <obj_property name="ElementShortName">accum_o[44:0]</obj_property>
+         <obj_property name="ObjectShortName">accum_o[44:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /valid_o">
+         <obj_property name="ElementShortName">valid_o</obj_property>
+         <obj_property name="ObjectShortName">valid_o</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /valid_reg">
+         <obj_property name="ElementShortName">valid_reg</obj_property>
+         <obj_property name="ObjectShortName">valid_reg</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /enable_reg">
+         <obj_property name="ElementShortName">enable_reg</obj_property>
+         <obj_property name="ObjectShortName">enable_reg</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /activation_reg">
+         <obj_property name="ElementShortName">activation_reg[17:0]</obj_property>
+         <obj_property name="ObjectShortName">activation_reg[17:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /accum_reg">
+         <obj_property name="ElementShortName">accum_reg[44:0]</obj_property>
+         <obj_property name="ObjectShortName">accum_reg[44:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /weight_mem">
+         <obj_property name="ElementShortName">weight_mem[0:511][17:0]</obj_property>
+         <obj_property name="ObjectShortName">weight_mem[0:511][17:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /weight_addr">
+         <obj_property name="ElementShortName">weight_addr[8:0]</obj_property>
+         <obj_property name="ObjectShortName">weight_addr[8:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /compute_addr">
+         <obj_property name="ElementShortName">compute_addr[8:0]</obj_property>
+         <obj_property name="ObjectShortName">compute_addr[8:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /done_flag">
+         <obj_property name="ElementShortName">done_flag</obj_property>
+         <obj_property name="ObjectShortName">done_flag</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /row">
+         <obj_property name="ElementShortName">row[31:0]</obj_property>
+         <obj_property name="ObjectShortName">row[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /column">
+         <obj_property name="ElementShortName">column[31:0]</obj_property>
+         <obj_property name="ObjectShortName">column[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_integration/sa/\gen_row[0].gen_col[0].pe_inst /K">
+         <obj_property name="ElementShortName">K[31:0]</obj_property>
+         <obj_property name="ObjectShortName">K[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

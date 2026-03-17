@@ -1,0 +1,138 @@
+`timescale 1ns / 1ps
+import systolic_array_pkg::*; 
+
+module pe_cell #
+(
+    parameter row = 0,
+    parameter column = 0,
+    parameter K = 512
+)
+
+(
+    input logic clk, rst,
+    
+    // Data flow between pe_cells
+    input logic signed [PE_INP_WIDTH-1:0]  activation_i,        // input activation variable
+    output logic signed [PE_INP_WIDTH-1:0] activation_o,        // output activation variable
+    
+    // Weight loading variables
+    input logic signed [PE_INP_WIDTH-1:0]  weight_load_data,
+    input logic                            weight_load_en,
+    input logic                            load_mode,
+    
+    // Control variables
+    input logic  enable_i,                                      // enable input signal to start computation
+    output logic enable_o,                                      // enable output signal to enable next neighboring tiles
+    
+    // Outputting results
+    output logic signed [PE_ACCUM_WIDTH-1:0] accum_o,           // accumulated variable from weight and activation variable multiplication
+    output logic                             valid_o            // valid signal to indicate when accumulation is finished (active-high)
+);
+    // General variables for clocking new values (while outputs receive these combinationally)
+    logic                               valid_reg;
+    logic                               enable_reg;
+    logic signed [PE_INP_WIDTH-1:0]     activation_reg;
+    logic signed [PE_ACCUM_WIDTH-1:0]   accum_reg;
+    
+    // BRAM for holding weights locally (this will be updated/loaded by the arm core at the start of the FPGA's work)
+    (* ram_style = "block" *)
+    logic signed [PE_INP_WIDTH-1:0] weight_mem [0:K-1];
+    logic signed [PE_INP_WIDTH-1:0] weight_data_reg;            // registered output from BRAM (so it actually infers BRAM instead of distributed RAM)
+    
+    logic [$clog2(K)-1:0]           weight_addr;                // serves as a counter for loading new weights
+    
+    logic [$clog2(K):0]             compute_addr;               // global counter for checking what stage we are at with the systolic array for this specific pe_tile
+                                                                // needs the extra bit to hold values >= K (512) for the termination check
+    
+    // Flag to track if we've finished computation (prevents accumulator corruption from undefined inputs)
+    logic                           done_flag;
+    
+    // Flag to track BRAM prefetch (first cycle loads weight[0] into reg without accumulating)
+    logic                           prefetch_done;
+    
+    initial
+    begin
+        valid_reg = 0;
+        enable_reg = 0;
+        activation_reg = 0;
+        accum_reg = 0;
+        done_flag = 0;
+        prefetch_done = 0;
+    end
+    
+    always_ff @(posedge clk)
+    begin
+        if (rst)
+        begin
+            enable_reg <=       0;
+            activation_reg <=   0;
+            accum_reg <=        0;
+            compute_addr <=     0;
+            weight_addr <=      0;
+            valid_reg <=        0;
+            done_flag <=        0;
+            prefetch_done <=    0;
+        end
+        
+        else if (load_mode)
+        begin
+            // LOAD PHASE: where the weights of this specific pe_tile are being loaded into the tile's BRAM
+            if(weight_load_en)
+            begin
+                weight_mem[weight_addr] <=  weight_load_data;
+                weight_addr <= (weight_addr >= K-1) ? 0 : weight_addr + 1; //wraparound
+            end
+            
+            enable_reg <= 0; //make sure enable_reg isn't on when loading (otherwise, obviously problems)
+            done_flag <= 0;  // Reset done flag during load
+            prefetch_done <= 0; // Reset prefetch so next compute phase starts fresh
+        end
+        
+        else
+        begin
+            // BRAM READ: Always read current address at start of cycle (this forces BRAM inference since it's registered)
+            if ((enable_i || enable_reg) && !done_flag)
+                weight_data_reg <= weight_mem[compute_addr];
+                
+            if ((enable_i || enable_reg) && !done_flag)
+            begin
+                if (enable_i) enable_reg <= 1;
+                
+                // PREFETCH CYCLE: First cycle loads weight[0] into reg, increment addr for next read
+                // This handles the 1-cycle read latency of BRAM
+                if (!prefetch_done)
+                begin
+                    prefetch_done <=    1'b1;
+                    compute_addr <=     compute_addr + 1;  // 0 -> 1 (next cycle reads weight[1])
+                    // No accumulation this cycle (just loading weight[0] into reg)
+                end
+                
+                // FINAL MAC: When addr reaches 512, do last MAC with weight[511] in reg
+                else if (compute_addr >= K)  // 512 >= 512
+                begin
+                    activation_reg <= activation_i;      // Capture final activation for pipeline
+                    accum_reg <= accum_reg + (activation_i * weight_data_reg);  // Use current activation, not reg
+                    valid_reg <=    1;
+                    enable_reg <=   0;
+                    done_flag <=    1;
+                    prefetch_done <= 0;
+                    compute_addr <=  0;
+                end
+                
+                // NORMAL MAC: Cycles 1-511 (addr 1-511)
+                else
+                begin
+                    activation_reg <=   activation_i;    // Pipeline for next PE
+                    accum_reg <=        accum_reg + (activation_i * weight_data_reg);  // Use current activation
+                    compute_addr <=     compute_addr + 1;  // Increment for next weight read
+                end
+            end
+        end
+    end
+    
+    assign valid_o =        valid_reg;
+    assign enable_o =       enable_reg;
+    assign activation_o =   activation_reg;
+    assign accum_o =        accum_reg;                          // Now holds stable value after completion
+
+endmodule

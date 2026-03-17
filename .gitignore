@@ -116,6 +116,43 @@ build/**/*.hw/
 build/**/*.ip_user_files/
 build/**/**/*.srcs/**/**/**
 
+#------------------------
+# Fix Paths for Your Project Structure
+#------------------------
+# Your current gitignore uses 'build/vivado_project/' (singular)
+# but your actual path is 'build/vivado_projects/' (plural + project subdir)
+
+# Ignore all generated directories under specific project folders
+build/vivado_projects/*/*.gen/
+build/vivado_projects/*/*.cache/
+build/vivado_projects/*/*.hw/
+build/vivado_projects/*/*.ip_user_files/
+build/vivado_projects/*/*.runs/
+build/vivado_projects/*/*.sim/
+build/vivado_projects/*/*.tmp/
+
+# Ignore waveform configs (user-specific IDE settings)
+*.wcfg
+
+# Ignore generated reports and schematics (can be regenerated)
+build/vivado_projects/*/reports/
+
+# Ignore bitstreams (store in GitHub Releases if needed for demo)
+build/vivado_projects/*/*.runs/impl*/*.bit
+build/vivado_projects/*/*.runs/impl*/*.bin
+
+#------------------------
+# Whitelist: Keep Vivado Project Sources
+#------------------------
+# IMPORTANT: You need these to recreate the project later
+!build/vivado_projects/*/*.srcs/
+!build/vivado_projects/*/*.xpr
+!build/vivado_projects/*/*.bd
+
+# Keep the hw_handoff for Vitis (you already have this, but ensure it works)
+!build/hw_handoff/
+!build/hw_handoff/*.xsa
+
 
 #------------------------
 # Vitis Workspace & BSP Build Artifacts

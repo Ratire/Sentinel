@@ -148,6 +148,7 @@ build/vivado_projects/*/*.runs/impl*/*.bin
 !build/vivado_projects/*/*.srcs/
 !build/vivado_projects/*/*.xpr
 !build/vivado_projects/*/*.bd
+!build/vivado_projects/*/Waveforms/*.wcfg
 
 # Keep the hw_handoff for Vitis (you already have this, but ensure it works)
 !build/hw_handoff/

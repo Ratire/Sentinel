@@ -247,21 +247,21 @@ xelab.*
 *.saif
 
 # Extra additions to get rid of the Vivado Project Generated Files
-build/vivado_project/*.gen/
-build/vivado_project/*.cache/
-build/vivado_project/*.hw/
-build/vivado_project/*.ip_user_files/
-build/vivado_project/*.runs/
-build/vivado_project/*.sim/
-build/vivado_project/*.tmp/
-build/vivado_project/*.xpr  # Since I don't want to track the project file itself
+# NOTE: These must match the Whitelist paths above (using vivado_projects plural)
+build/vivado_projects/*.gen/
+build/vivado_projects/*.cache/
+build/vivado_projects/*.hw/
+build/vivado_projects/*.ip_user_files/
+build/vivado_projects/*.runs/
+build/vivado_projects/*.sim/
+build/vivado_projects/*.tmp/
 
-build/vivado_project/Senti.gen/
-build/vivado_project/Senti.srcs/sources_1/new/
+# NOTE: The following lines were removed because they block project recreation:
+# build/vivado_project/*.xpr  (REMOVED - you need this file!)
+# build/vivado_project/Senti.srcs/  (REMOVED - blocks your source files!)
+
 __pycache__/
 *.pyc
 build/vivado_project/Waveforms/
-build/vivado_project/Senti.srcs/
-build/vivado_project/*.xpr
 *.bda
 */ui/*.ui

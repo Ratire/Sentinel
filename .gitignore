@@ -114,7 +114,7 @@ build/**/*.xpr
 build/**/*.cache/
 build/**/*.hw/
 build/**/*.ip_user_files/
-build/**/**/*.srcs/**/**/**
+
 
 #------------------------
 # Fix Paths for Your Project Structure

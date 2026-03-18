@@ -1,0 +1,1 @@
+/home/Rati/Desktop/Personal_Projects/Sentinel/Senti/src/rtl/fft_core/FFT_pkg.sv

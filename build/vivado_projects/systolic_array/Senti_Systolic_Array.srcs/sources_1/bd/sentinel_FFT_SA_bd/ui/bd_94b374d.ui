@@ -1,0 +1,55 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.754237",
+   "Default View_TopLeft":"-217,-444",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_weight_load_en_0 -pg 1 -lvl 0 -x 0 -y 530 -defaultsOSRD
+preplace port port-id_done_o_0 -pg 1 -lvl 7 -x 2320 -y 380 -defaultsOSRD
+preplace port port-id_arm_start_0 -pg 1 -lvl 0 -x 0 -y 250 -defaultsOSRD
+preplace port port-id_load_mode_0 -pg 1 -lvl 0 -x 0 -y 280 -defaultsOSRD
+preplace port port-id_result_valid_0 -pg 1 -lvl 7 -x 2320 -y 440 -defaultsOSRD
+preplace portBus weight_load_row_0 -pg 1 -lvl 0 -x 0 -y 620 -defaultsOSRD
+preplace portBus weight_load_col_0 -pg 1 -lvl 0 -x 0 -y 590 -defaultsOSRD
+preplace portBus weight_load_data_0 -pg 1 -lvl 0 -x 0 -y 310 -defaultsOSRD
+preplace portBus result_addr_0 -pg 1 -lvl 0 -x 0 -y 560 -defaultsOSRD
+preplace portBus result_data_0 -pg 1 -lvl 7 -x 2320 -y 410 -defaultsOSRD
+preplace inst sentinel_fft512_reor_0 -pg 1 -lvl 5 -x 1800 -y 400 -defaultsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 1 -x 340 -y 120 -defaultsOSRD
+preplace inst sentinel_accel_wrapp_0 -pg 1 -lvl 6 -x 2140 -y 410 -defaultsOSRD
+preplace inst smartconnect_0 -pg 1 -lvl 2 -x 800 -y 90 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 3 -x 1130 -y 140 -defaultsOSRD
+preplace inst fft512_axishim_0 -pg 1 -lvl 4 -x 1500 -y 410 -defaultsOSRD
+preplace inst rst_ps8_0_49M -pg 1 -lvl 1 -x 340 -y 390 -defaultsOSRD
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 6 40 230 650 180 950 300 1310 510 1670 310 N
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 0 2 30 220 640
+preplace netloc rst_ps8_0_49M_peripheral_aresetn 1 1 5 660 190 960 260 NJ 260 NJ 260 1980
+preplace netloc rst_ps8_0_49M_peripheral_reset 1 1 4 NJ 390 NJ 390 1300 310 1660
+preplace netloc fft512_axishim_0_fft_valin 1 4 1 N 410
+preplace netloc fft512_axishim_0_fft_datain 1 4 1 N 430
+preplace netloc sentinel_fft512_reor_0_data_out 1 3 3 1340 300 NJ 300 1940
+preplace netloc sentinel_fft512_reor_0_val_out 1 3 3 1330 520 NJ 520 1930
+preplace netloc weight_load_row_0_1 1 0 6 NJ 620 NJ 620 NJ 620 NJ 620 NJ 620 1960J
+preplace netloc weight_load_en_0_1 1 0 6 NJ 530 NJ 530 NJ 530 NJ 530 NJ 530 1950J
+preplace netloc weight_load_col_0_1 1 0 6 NJ 590 NJ 590 NJ 590 NJ 590 NJ 590 1970J
+preplace netloc weight_load_data_0_1 1 0 6 20J 290 NJ 290 NJ 290 NJ 290 NJ 290 1950J
+preplace netloc sentinel_accel_wrapp_0_done_o 1 6 1 NJ 380
+preplace netloc arm_start_0_1 1 0 6 NJ 250 NJ 250 940J 270 NJ 270 NJ 270 1970J
+preplace netloc result_addr_0_1 1 0 6 NJ 560 NJ 560 NJ 560 NJ 560 NJ 560 1980J
+preplace netloc load_mode_0_1 1 0 6 NJ 280 NJ 280 NJ 280 NJ 280 NJ 280 1960J
+preplace netloc sentinel_accel_wrapp_0_result_data 1 6 1 2300J 410n
+preplace netloc sentinel_accel_wrapp_0_result_valid 1 6 1 NJ 440
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM1_FPD 1 1 1 640 60n
+preplace netloc smartconnect_0_M00_AXI 1 2 1 N 90
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 3 1 1320 120n
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 1 1 N 80
+levelinfo -pg 1 0 340 800 1130 1500 1800 2140 2320
+pagesize -pg 1 -db -bbox -sgen -220 0 2500 640
+"
+}
+{
+   "da_axi4_cnt":"2",
+   "da_clkrst_cnt":"2",
+   "da_zynq_ultra_ps_e_cnt":"1"
+}

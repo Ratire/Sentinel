@@ -1,0 +1,39 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.684314",
+   "Default View_TopLeft":"10,-115",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 3 -x 1020 -y 320 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 5 -x 1880 -y 570 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 4 -x 1520 -y 310 -defaultsOSRD
+preplace inst rst_ps8_0_96M -pg 1 -lvl 1 -x 200 -y 530 -defaultsOSRD
+preplace inst axi_smc_1 -pg 1 -lvl 2 -x 540 -y 280 -defaultsOSRD
+preplace inst sentinel_fft512_reor_0 -pg 1 -lvl 3 -x 1020 -y 110 -defaultsOSRD
+preplace inst fft512_axishim_0 -pg 1 -lvl 4 -x 1520 -y 100 -defaultsOSRD
+preplace netloc rst_ps8_0_96M_peripheral_aresetn 1 1 4 400 440 NJ 440 1360 620 NJ
+preplace netloc rst_ps8_0_96M_peripheral_reset 1 1 3 370J 160 680 20 1350
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 5 30 290 380 170 700 220 1330 630 1680
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 0 4 20 10 NJ 10 NJ 10 1320
+preplace netloc sentinel_fft512_reor_0_val_out 1 3 1 N 120
+preplace netloc sentinel_fft512_reor_0_data_out 1 3 1 1340 100n
+preplace netloc fft512_axishim_0_fft_valin 1 2 3 720 420 NJ 420 1690
+preplace netloc fft512_axishim_0_fft_datain 1 2 3 710 430 NJ 430 1680
+preplace netloc axi_dma_0_M_AXI_MM2S 1 1 5 390 180 690J 200 1350J 220 NJ 220 2050
+preplace netloc axi_dma_0_M_AXI_S2MM 1 1 5 400 190 680J 210 NJ 210 NJ 210 2060
+preplace netloc axi_smc_1_M00_AXI 1 2 1 N 280
+preplace netloc axi_smc_M00_AXI 1 4 1 1700 310n
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_LPD 1 3 1 N 280
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM1_FPD 1 3 1 N 300
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 3 3 1360 200 NJ 200 2070
+preplace netloc fft512_axishim_0_m_axis 1 4 1 1710 80n
+levelinfo -pg 1 0 200 540 1020 1520 1880 2090
+pagesize -pg 1 -db -bbox -sgen 0 0 2090 690
+"
+}
+{
+   "da_axi4_cnt":"5",
+   "da_clkrst_cnt":"1",
+   "da_zynq_ultra_ps_e_cnt":"1"
+}

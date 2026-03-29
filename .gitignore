@@ -266,3 +266,28 @@ __pycache__/
 build/vivado_project/Waveforms/
 *.bda
 */ui/*.ui
+
+# Vivado generated artifacts (kept locally but not in git)
+build/vivado_project/Senti.gen/
+build/vivado_project/Senti.runs/
+build/vivado_project/Senti.hw/
+build/vivado_project/Senti.ip_user_files/
+build/vivado_project/Senti.sim/
+build/vivado_projects/*/Senti_*.gen/
+build/vivado_projects/*/Senti_*.runs/
+build/vivado_projects/*/Senti_*.hw/
+build/vivado_projects/*/Senti_*.sim/
+
+# IP component files with absolute paths
+src/ip/systolic_array_ip/component.xml
+
+# Vivado project files with absolute paths
+build/vivado_projects/*/*.xpr
+
+# Local images/reference files
+Images_To_Show/Synthesis_utilization_report.png
+Images_To_Show/Synthesis_utilization_report_2.png
+Images_To_Show/pdfs/sentinel_bd_FFT_SA.pdf
+Images_To_Show/pe_cell.txt
+Images_To_Show/pe_cell_code.pdf
+
